@@ -331,27 +331,34 @@
 
         if (isValid) {
           // Simular envio do formulário
-          const formData = {
-            nome: document.getElementById('formNome').value,
-            empresa: document.getElementById('formEmpresa').value,
-            email: document.getElementById('formEmail').value,
-            telefone: document.getElementById('formTelefone').value,
-            servico: document.getElementById('formServico').value,
-            mensagem: document.getElementById('formMensagem').value
-          };
+   const formData = {
+  nome: document.getElementById('formNome').value,
+  empresa: document.getElementById('formEmpresa').value,
+  email: document.getElementById('formEmail').value,
+  telefone: document.getElementById('formTelefone').value,
+  servico: document.getElementById('formServico').value,
+  mensagem: document.getElementById('formMensagem').value
+};
 
-          console.log('Formulário enviado:', formData);
+const mensagem = `*Nova Solicitação de Orçamento*
 
-          // Mostrar mensagem de sucesso
-          contactForm.style.display = 'none';
-          formSuccess.classList.add('show');
+👤 Nome: ${formData.nome}
+🏢 Empresa: ${formData.empresa || 'Não informado'}
+📧 E-mail: ${formData.email}
+📞 Telefone: ${formData.telefone}
+💼 Serviço: ${formData.servico}
 
-          // Resetar formulário após 3 segundos
-          setTimeout(() => {
-            contactForm.reset();
-            contactForm.style.display = 'flex';
-            formSuccess.classList.remove('show');
-          }, 3000);
+📝 Mensagem:
+${formData.mensagem}`;
+
+const numero = "5581996744143"; // Troque pelo seu número
+
+window.open(
+  `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
+  "_blank"
+);
+
+contactForm.reset();
         }
       });
 
