@@ -1,5 +1,4 @@
-
-    /* ============================================
+/* ============================================
        CM REGULADORA - DESIGN SYSTEM
        Approach: Clean Professional
        Colors: #C41230 (red), #1A1A2E (dark), #FFF (white)
@@ -2047,6 +2046,128 @@
 
     @media (min-width: 768px) {
       .stat-label { font-size: 11px; }
+    }
+
+    /* ============================================
+       BASES GALLERY (CARROSSEL DE IMAGENS)
+    ============================================ */
+    .bases-gallery {
+      background: var(--cm-white);
+      overflow: hidden;
+    }
+
+    .bases-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bases-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .base-card {
+      min-width: 100%;
+      padding: 0 10px;
+    }
+
+    @media (min-width: 480px) {
+      .base-card { min-width: 80%; padding: 0 12px; }
+    }
+
+    @media (min-width: 768px) {
+      .base-card { min-width: 50%; padding: 0 14px; }
+    }
+
+    @media (min-width: 1024px) {
+      .base-card { min-width: 33.333%; padding: 0 16px; }
+    }
+
+    .base-card-img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: var(--cm-red);
+    }
+
+    .base-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .base-card:hover .base-card-img img {
+      transform: scale(1.03);
+    }
+
+    .base-card-caption {
+      position: absolute;
+      left: 18px;
+      bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cm-white);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      z-index: 2;
+    }
+
+    @media (min-width: 768px) {
+      .base-card-caption { left: 20px; bottom: 16px; font-size: 14px; }
+    }
+
+    .base-card-caption i {
+      color: var(--cm-red);
+      font-size: 14px;
+    }
+
+    .bases-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .bases-nav { gap: 16px; margin-top: 32px; }
+    }
+
+    .base-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--cm-gray-300);
+      background: var(--cm-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    @media (min-width: 768px) {
+      .base-btn { width: 44px; height: 44px; }
+    }
+
+    .base-btn:hover {
+      border-color: var(--cm-red);
+      color: var(--cm-red);
+    }
+
+    .base-btn i {
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .base-btn i { font-size: 16px; }
     }
 
     /* ============================================
