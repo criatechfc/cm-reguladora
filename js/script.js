@@ -1,5 +1,4 @@
-
-    /* ============================================
+/* ============================================
        CM REGULADORA - JAVASCRIPT
     ============================================ */
 
@@ -158,6 +157,69 @@
       }
       updateSlider();
     }, 5000);
+
+    // === Bases Gallery Slider (Conheça Nossas Bases) ===
+    const basesTrack = document.getElementById('basesTrack');
+    const basesPrevBtn = document.getElementById('basesPrevBtn');
+    const basesNextBtn = document.getElementById('basesNextBtn');
+
+    if (basesTrack && basesPrevBtn && basesNextBtn) {
+      let basesCurrentSlide = 0;
+      let basesSlidesPerView = 1;
+
+      function updateBasesSlidesPerView() {
+        if (window.innerWidth >= 1024) {
+          basesSlidesPerView = 3;
+        } else if (window.innerWidth >= 768) {
+          basesSlidesPerView = 2;
+        } else if (window.innerWidth >= 480) {
+          basesSlidesPerView = 1.25;
+        } else {
+          basesSlidesPerView = 1;
+        }
+      }
+
+      function getBasesTotalSlides() {
+        return basesTrack.children.length;
+      }
+
+      function getBasesMaxSlide() {
+        return Math.max(0, Math.ceil(getBasesTotalSlides() - basesSlidesPerView));
+      }
+
+      function updateBasesSlider() {
+        updateBasesSlidesPerView();
+        const maxSlide = getBasesMaxSlide();
+        if (basesCurrentSlide > maxSlide) {
+          basesCurrentSlide = maxSlide;
+        }
+        const cardWidth = 100 / basesSlidesPerView;
+        basesTrack.style.transform = `translateX(-${basesCurrentSlide * cardWidth}%)`;
+      }
+
+      basesPrevBtn.addEventListener('click', () => {
+        basesCurrentSlide = Math.max(0, basesCurrentSlide - 1);
+        updateBasesSlider();
+      });
+
+      basesNextBtn.addEventListener('click', () => {
+        basesCurrentSlide = Math.min(getBasesMaxSlide(), basesCurrentSlide + 1);
+        updateBasesSlider();
+      });
+
+      window.addEventListener('resize', updateBasesSlider);
+      updateBasesSlider();
+
+      // Auto-play do carrossel de bases
+      setInterval(() => {
+        if (basesCurrentSlide < getBasesMaxSlide()) {
+          basesCurrentSlide++;
+        } else {
+          basesCurrentSlide = 0;
+        }
+        updateBasesSlider();
+      }, 4500);
+    }
 
     // === WhatsApp Popup ===
     const whatsappBtn = document.getElementById('whatsappBtn');
