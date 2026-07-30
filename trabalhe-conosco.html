@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trabalhe conosco - Cadastre-se como vistoriador parceiro da CM Reguladora de Sinistros e atue em todo o Brasil." />
+  <title>Trabalhe Conosco - Cadastro de Vistoriador | CM Reguladora de Sinistros</title>
+  <link rel="icon" type="image/jpeg" href="images/cm-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/cm-logo.jpg" alt="CM Reguladora de Sinistros" />
+        <div class="header-logo-text">
+          <span>CM</span>
+          <span>Reguladora de Sinistros</span>
+        </div>
+      </a>
+      <nav class="nav-desktop">
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="index.html#segmentos">Segmentos</a>
+        <a href="index.html#processo">Processo</a>
+        <a href="index.html#contato">Contato</a>
+        <a href="trabalhe-conosco.html" class="active">Trabalhe Conosco</a>
+      </nav>
+      <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" class="btn-primary desktop-cta">
+        <i class="fab fa-whatsapp"></i> Solicitar Atendimento
+      </a>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU (sidebar - não ocupa tela toda) -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="mobile-menu-header">
+      <img src="images/cm-logo.jpg" alt="CM" />
+      <span>CM Reguladora</span>
+    </div>
+    <div class="mobile-menu-divider"></div>
+    <nav class="mobile-nav">
+      <a href="index.html#inicio" class="mobile-link"><i class="fas fa-home"></i> Início</a>
+      <a href="index.html#sobre" class="mobile-link"><i class="fas fa-info-circle"></i> Sobre</a>
+      <a href="index.html#servicos" class="mobile-link"><i class="fas fa-cogs"></i> Serviços</a>
+      <a href="index.html#segmentos" class="mobile-link"><i class="fas fa-layer-group"></i> Segmentos</a>
+      <a href="index.html#processo" class="mobile-link"><i class="fas fa-route"></i> Processo</a>
+      <a href="index.html#contato" class="mobile-link"><i class="fas fa-envelope"></i> Contato</a>
+      <a href="trabalhe-conosco.html" class="mobile-link active"><i class="fas fa-user-tie"></i> Trabalhe Conosco</a>
+    </nav>
+    <div class="mobile-menu-divider"></div>
+    <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" class="btn-primary mobile-cta-btn">
+      <i class="fab fa-whatsapp"></i> Solicitar Atendimento
+    </a>
+    <div class="mobile-menu-footer">
+      <p><i class="fas fa-phone-alt"></i> (63) 9 9966-6745</p>
+      <p><i class="fas fa-clock"></i> Atendimento 24h</p>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <section class="page-hero-inner">
+    <div class="container">
+      <p class="page-hero-breadcrumb animate-on-scroll">
+        <a href="index.html">Início</a> <i class="fas fa-chevron-right"></i> Trabalhe Conosco
+      </p>
+      <h1 class="animate-on-scroll delay-1">Trabalhe Conosco</h1>
+      <p class="page-hero-subtitle animate-on-scroll delay-2">
+        Faça parte da nossa rede de vistoriadores parceiros e atue em todo o território nacional com agilidade e profissionalismo.
+      </p>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO DE CADASTRO -->
+  <section class="section-padding">
+    <div class="container form-page-container">
+      <div class="form-note animate-on-scroll">
+        <i class="fas fa-info-circle"></i>
+        <p>Preencha todos os campos com atenção. Após o envio, tenha em mãos os arquivos da <strong>CNH</strong>, <strong>CRLV</strong> e <strong>comprovante de endereço</strong> para anexar ao cadastro. Nossa equipe entrará em contato para os próximos passos.</p>
+      </div>
+
+      <form class="professional-form form-card animate-on-scroll" id="vistoriadorForm" action="https://formsubmit.co/cmreguladora@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+        <!-- Configurações do FormSubmit -->
+        <input type="hidden" name="_subject" value="Novo Cadastro de Vistoriador - Trabalhe Conosco" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="obrigado.html" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <h3 class="form-section-divider"><i class="fas fa-id-card"></i> Dados Pessoais</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vNome">Nome Completo *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-user input-icon"></i>
+              <input type="text" id="vNome" name="nome" placeholder="Seu nome completo" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vNascimento">Data de Nascimento *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-calendar-alt input-icon"></i>
+              <input type="date" id="vNascimento" name="data_nascimento" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vCPF">CPF *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-id-badge input-icon"></i>
+              <input type="text" id="vCPF" name="cpf" placeholder="000.000.000-00" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vRG">RG *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-id-badge input-icon"></i>
+              <input type="text" id="vRG" name="rg" placeholder="00.000.000-0" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="vEndereco">Endereço *</label>
+          <div class="input-wrapper">
+            <i class="fas fa-map-marker-alt input-icon"></i>
+            <input type="text" id="vEndereco" name="endereco" placeholder="Rua, número, bairro" required />
+          </div>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-row form-row-3">
+          <div class="form-group">
+            <label for="vCidade">Cidade *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-city input-icon"></i>
+              <input type="text" id="vCidade" name="cidade" placeholder="Sua cidade" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vUF">UF *</label>
+            <div class="input-wrapper select-wrapper">
+              <i class="fas fa-map input-icon"></i>
+              <select id="vUF" name="uf" required>
+                <option value="" disabled selected>UF</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vCEP">CEP *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-map-pin input-icon"></i>
+              <input type="text" id="vCEP" name="cep" placeholder="00000-000" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vCelular">Telefone Celular *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-mobile-alt input-icon"></i>
+              <input type="tel" id="vCelular" name="tel_celular" placeholder="(00) 00000-0000" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vRecado">Telefone Recado</label>
+            <div class="input-wrapper">
+              <i class="fas fa-phone input-icon"></i>
+              <input type="tel" id="vRecado" name="tel_recado" placeholder="(00) 0000-0000" />
+            </div>
+          </div>
+        </div>
+
+        <h3 class="form-section-divider"><i class="fas fa-university"></i> Dados Bancários</h3>
+
+        <div class="form-row form-row-4">
+          <div class="form-group">
+            <label for="vBanco">Banco *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-landmark input-icon"></i>
+              <input type="text" id="vBanco" name="banco" placeholder="Nome do banco" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vAgencia">Agência *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-hashtag input-icon"></i>
+              <input type="text" id="vAgencia" name="agencia" placeholder="0000" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vCC">C/C</label>
+            <div class="input-wrapper">
+              <i class="fas fa-wallet input-icon"></i>
+              <input type="text" id="vCC" name="conta_corrente" placeholder="00000-0" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vCP">C/P</label>
+            <div class="input-wrapper">
+              <i class="fas fa-piggy-bank input-icon"></i>
+              <input type="text" id="vCP" name="conta_poupanca" placeholder="00000-0" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="vTitular">Titular da Conta *</label>
+          <div class="input-wrapper">
+            <i class="fas fa-user-check input-icon"></i>
+            <input type="text" id="vTitular" name="titular_conta" placeholder="Nome do titular" required />
+          </div>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="vPix">PIX *</label>
+          <div class="input-wrapper">
+            <i class="fas fa-qrcode input-icon"></i>
+            <input type="text" id="vPix" name="pix" placeholder="Chave PIX" required />
+          </div>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="vTempoExp">Tempo de Experiência *</label>
+          <div class="input-wrapper">
+            <i class="fas fa-briefcase input-icon"></i>
+            <input type="text" id="vTempoExp" name="tempo_experiencia" placeholder="Ex: 5 anos" required />
+          </div>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="vRelatoExp">Relatar Experiência *</label>
+          <div class="input-wrapper textarea-wrapper">
+            <i class="fas fa-comment-alt input-icon"></i>
+            <textarea id="vRelatoExp" name="relato_experiencia" rows="4" placeholder="Conte um pouco sobre sua experiência como vistoriador..." required></textarea>
+          </div>
+          <span class="form-error"></span>
+        </div>
+
+        <h3 class="form-section-divider"><i class="fas fa-car"></i> Dados do Veículo</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vMarca">Marca *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-car-side input-icon"></i>
+              <input type="text" id="vMarca" name="veiculo_marca" placeholder="Ex: Volkswagen" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vModelo">Modelo *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-car input-icon"></i>
+              <input type="text" id="vModelo" name="veiculo_modelo" placeholder="Ex: Gol" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vAno">Ano de Fabricação *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-calendar input-icon"></i>
+              <input type="number" id="vAno" name="veiculo_ano" placeholder="0000" min="1970" max="2026" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vPlaca">Placa *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-clipboard-list input-icon"></i>
+              <input type="text" id="vPlaca" name="veiculo_placa" placeholder="ABC-0000" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Possui Seguro? *</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="possui_seguro" value="Sim" required /> Sim</label>
+              <label class="radio-option"><input type="radio" name="possui_seguro" value="Não" /> Não</label>
+            </div>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="vSeguradora">Seguradora</label>
+            <div class="input-wrapper">
+              <i class="fas fa-shield-alt input-icon"></i>
+              <input type="text" id="vSeguradora" name="seguradora" placeholder="Nome da seguradora" />
+            </div>
+          </div>
+        </div>
+
+        <h3 class="form-section-divider"><i class="fas fa-paperclip"></i> Documentos (Anexos)</h3>
+
+        <div class="form-row">
+          <div class="form-group file-upload-group">
+            <label for="vCNH">CNH *</label>
+            <input type="file" id="vCNH" name="anexo_cnh" accept=".pdf,.jpg,.jpeg,.png" required />
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group file-upload-group">
+            <label for="vCRLV">CRLV *</label>
+            <input type="file" id="vCRLV" name="anexo_crlv" accept=".pdf,.jpg,.jpeg,.png" required />
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-group file-upload-group">
+          <label for="vComprovante">Comprovante de Endereço *</label>
+          <input type="file" id="vComprovante" name="anexo_comprovante_endereco" accept=".pdf,.jpg,.jpeg,.png" required />
+          <span class="form-error"></span>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit-btn" id="vistoriadorSubmitBtn">
+          <i class="fas fa-paper-plane"></i> Enviar Cadastro
+        </button>
+
+        <div class="form-success" id="vistoriadorFormSuccess">
+          <i class="fas fa-check-circle"></i>
+          <p>Enviando seu cadastro, aguarde um instante...</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/cm-logo.jpg" alt="CM Reguladora de Sinistros" />
+          <p>Soluções completas em regulação e vistoria de sinistros de transporte rodoviário, aéreo e marítimo, com atendimento 24 horas em todo o Brasil.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/cmreguladora?igsh=MWE0a2thbWszbGxuZQ%3D%3D" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#segmentos">Segmentos</a></li>
+            <li><a href="index.html#processo">Processo</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+            <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="index.html#servicos">Regulação de Sinistros</a></li>
+            <li><a href="index.html#servicos">Vistorias</a></li>
+            <li><a href="index.html#servicos">Transporte Rodoviário</a></li>
+            <li><a href="index.html#servicos">Transporte Aéreo</a></li>
+            <li><a href="index.html#servicos">Transporte Marítimo</a></li>
+            <li><a href="index.html#servicos">Relatórios Técnicos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>(63) 9 9966-6745</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" style="color:rgba(255,255,255,0.7);font-size:13px;">Atendimento 24 horas</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Todo o território nacional</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>contato@cmreguladora.com.br</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 CM Reguladora de Sinistros. Todos os direitos reservados. | Powered by <a href="www.criatech.online"></a>Cria Tech💙</p>
+        <a href="https://www.instagram.com/cmreguladora" target="_blank" class="instagram-link">
+          <i class="fab fa-instagram"></i> @cmreguladora
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING -->
+  <div class="whatsapp-float">
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <p class="whatsapp-popup-title"><i class="fab fa-whatsapp" style="color: #25D366;"></i> 24h</p>
+      <p class="whatsapp-popup-phone">(63) 9 9966-6745</p>
+      <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" class="whatsapp-popup-btn">
+        <i class="fab fa-whatsapp"></i> Solicitar Atendimento Agora
+      </a>
+    </div>
+    <button class="whatsapp-btn" id="whatsappBtn" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </button>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
