@@ -105,7 +105,47 @@
     document.querySelectorAll('.stat-number[data-count]').forEach(el => {
       counterObserver.observe(el);
     });
+// === Lightbox (Imagem Expandida ao Clicar) ===
+const imgLightbox = document.getElementById('imgLightbox');
+const imgLightboxImg = document.getElementById('imgLightboxImg');
+const imgLightboxClose = document.getElementById('imgLightboxClose');
+const zoomableImages = document.querySelectorAll('.base-card-img img');
 
+function openLightbox(src, alt) {
+  imgLightboxImg.src = src;
+  imgLightboxImg.alt = alt || '';
+  imgLightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  imgLightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+zoomableImages.forEach(img => {
+  img.addEventListener('click', () => {
+    openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+  });
+});
+
+if (imgLightboxClose) {
+  imgLightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (imgLightbox) {
+  imgLightbox.addEventListener('click', (e) => {
+    if (e.target === imgLightbox) {
+      closeLightbox();
+    }
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && imgLightbox && imgLightbox.classList.contains('active')) {
+    closeLightbox();
+  }
+});
     // === Testimonials Slider ===
     const track = document.getElementById('testimonialsTrack');
     const prevBtn = document.getElementById('prevBtn');
