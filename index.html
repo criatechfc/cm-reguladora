@@ -1,721 +1,1215 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CM Reguladora de Sinistros - Especialistas em regulação e vistoria de sinistros rodoviários, marítimos e aéreos em todo o Brasil."
+    />
+    <title>CM Reguladora de Sinistros</title>
+    <link rel="icon" type="image/jpeg" href="images/cm-logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CM Reguladora de Sinistros - Especialistas em regulação e vistoria de sinistros rodoviários, marítimos e aéreos em todo o Brasil." />
-  <title>CM Reguladora de Sinistros</title>
-  <link rel="icon" type="image/jpeg" href="images/cm-logo.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="#" class="header-logo">
-        <img src="images/cm-logo.jpg" alt="CM Reguladora de Sinistros" />
-        <div class="header-logo-text">
-          <span>CM</span>
-          <span>Reguladora de Sinistros</span>
-        </div>
-      </a>
-      <nav class="nav-desktop">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#segmentos">Segmentos</a>
-        <a href="#processo">Processo</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" class="btn-primary desktop-cta">
-        <i class="fab fa-whatsapp"></i> Solicitar Atendimento
-      </a>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </header>
-
-  <!-- MOBILE MENU (sidebar - não ocupa tela toda) -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="mobile-menu-header">
-      <img src="images/cm-logo.jpg" alt="CM" />
-      <span>CM Reguladora</span>
-    </div>
-    <div class="mobile-menu-divider"></div>
-    <nav class="mobile-nav">
-      <a href="#inicio" class="mobile-link"><i class="fas fa-home"></i> Início</a>
-      <a href="#sobre" class="mobile-link"><i class="fas fa-info-circle"></i> Sobre</a>
-      <a href="#servicos" class="mobile-link"><i class="fas fa-cogs"></i> Serviços</a>
-      <a href="#segmentos" class="mobile-link"><i class="fas fa-layer-group"></i> Segmentos</a>
-      <a href="#processo" class="mobile-link"><i class="fas fa-route"></i> Processo</a>
-      <a href="#contato" class="mobile-link"><i class="fas fa-envelope"></i> Contato</a>
-    </nav>
-    <div class="mobile-menu-divider"></div>
-    <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" class="btn-primary mobile-cta-btn">
-      <i class="fab fa-whatsapp"></i> Solicitar Atendimento
-    </a>
-    <div class="mobile-menu-footer">
-      <p><i class="fas fa-phone-alt"></i> (63) 9 9966-6745</p>
-      <p><i class="fas fa-clock"></i> Atendimento 24h</p>
-    </div>
-  </div>
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" id="heroParticles"></div>
-    <div class="container hero-content">
-      <p class="hero-tagline animate-on-scroll">Agilidade. Técnica. Confiança.</p>
-      <h1 class="hero-title animate-on-scroll delay-1">
-        Especialistas em Regulação e Vistoria de Sinistros em <span class="highlight">Todo o Brasil.</span>
-      </h1>
-      <p class="hero-description animate-on-scroll delay-2">
-        Atendimento ágil e especializado para sinistros rodoviários, marítimos e aéreos, com equipe técnica disponível 24 horas por dia em todo o território nacional.
-      </p>
-      <div class="hero-buttons animate-on-scroll delay-3">
-        <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" class="hero-btn-primary">
+  <body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+      <div class="container header-inner">
+        <a href="#" class="header-logo">
+          <img src="images/cm-logo.jpg" alt="CM Reguladora de Sinistros" />
+          <div class="header-logo-text">
+            <span>CM</span>
+            <span>Reguladora de Sinistros</span>
+          </div>
+        </a>
+        <nav class="nav-desktop">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#segmentos">Segmentos</a>
+          <a href="#processo">Processo</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <a
+          href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
+          target="_blank"
+          class="btn-primary desktop-cta"
+        >
           <i class="fab fa-whatsapp"></i> Solicitar Atendimento
         </a>
-        <a href="#servicos" class="hero-btn-secondary">
-          Conheça Nossos Serviços
-        </a>
-      </div>
-      <div class="hero-info animate-on-scroll delay-4">
-        <i class="far fa-clock"></i>
-        <div class="hero-info-text">
-          <strong>Atendimento 24 Horas</strong>
-          <span>Em todo o território nacional</span>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-      <div class="hero-scroll-indicator animate-on-scroll delay-5">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span>Role para baixo</span>
+    </header>
+
+    <!-- MOBILE MENU (sidebar - não ocupa tela toda) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="mobile-menu-header">
+        <img src="images/cm-logo.jpg" alt="CM" />
+        <span>CM Reguladora</span>
+      </div>
+      <div class="mobile-menu-divider"></div>
+      <nav class="mobile-nav">
+        <a href="#inicio" class="mobile-link"
+          ><i class="fas fa-home"></i> Início</a
+        >
+        <a href="#sobre" class="mobile-link"
+          ><i class="fas fa-info-circle"></i> Sobre</a
+        >
+        <a href="#servicos" class="mobile-link"
+          ><i class="fas fa-cogs"></i> Serviços</a
+        >
+        <a href="#segmentos" class="mobile-link"
+          ><i class="fas fa-layer-group"></i> Segmentos</a
+        >
+        <a href="#processo" class="mobile-link"
+          ><i class="fas fa-route"></i> Processo</a
+        >
+        <a href="#contato" class="mobile-link"
+          ><i class="fas fa-envelope"></i> Contato</a
+        >
+      </nav>
+      <div class="mobile-menu-divider"></div>
+      <a
+        href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
+        target="_blank"
+        class="btn-primary mobile-cta-btn"
+      >
+        <i class="fab fa-whatsapp"></i> Solicitar Atendimento
+      </a>
+      <div class="mobile-menu-footer">
+        <p><i class="fas fa-phone-alt"></i> (63) 9 9966-6745</p>
+        <p><i class="fas fa-clock"></i> Atendimento 24h</p>
       </div>
     </div>
-  </section>
 
-  <!-- ABOUT / FEATURES STRIP -->
-  <section class="features-strip" id="sobre">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-item animate-on-scroll">
-          <div class="feature-icon">
-            <i class="far fa-clock"></i>
-          </div>
-          <p class="feature-title">Atendimento<br>24 Horas</p>
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="container hero-content">
+        <p class="hero-tagline animate-on-scroll">
+          Agilidade. Técnica. Confiança.
+        </p>
+        <h1 class="hero-title animate-on-scroll delay-1">
+          Especialistas em Regulação e Vistoria de Sinistros em
+          <span class="highlight">Todo o Brasil.</span>
+        </h1>
+        <p class="hero-description animate-on-scroll delay-2">
+          Atendimento ágil e especializado para sinistros rodoviários, marítimos
+          e aéreos, com equipe técnica disponível 24 horas por dia em todo o
+          território nacional.
+        </p>
+        <div class="hero-buttons animate-on-scroll delay-3">
+          <a
+            href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
+            target="_blank"
+            class="hero-btn-primary"
+          >
+            <i class="fab fa-whatsapp"></i> Solicitar Atendimento
+          </a>
+          <a href="#servicos" class="hero-btn-secondary">
+            Conheça Nossos Serviços
+          </a>
         </div>
-        <div class="feature-item animate-on-scroll delay-1">
-          <div class="feature-icon">
-            <i class="fas fa-map-marker-alt"></i>
+        <div class="hero-info animate-on-scroll delay-4">
+          <i class="far fa-clock"></i>
+          <div class="hero-info-text">
+            <strong>Atendimento 24 Horas</strong>
+            <span>Em todo o território nacional</span>
           </div>
-          <p class="feature-title">Cobertura<br>Nacional</p>
         </div>
-        <div class="feature-item animate-on-scroll delay-2">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
+        <div class="hero-scroll-indicator animate-on-scroll delay-5">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
           </div>
-          <p class="feature-title">Equipe<br>Especializada</p>
-        </div>
-        <div class="feature-item animate-on-scroll delay-3">
-          <div class="feature-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <p class="feature-title">Agilidade na<br>Regulação</p>
-        </div>
-        <div class="feature-item animate-on-scroll delay-4">
-          <div class="feature-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <p class="feature-title">Atendimento<br>Empresarial</p>
+          <span>Role para baixo</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES SECTION -->
-  <section class="services section-padding" id="servicos">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <p class="section-subtitle">Nossos Serviços</p>
-        <h2 class="section-title">Soluções completas para cada tipo de sinistro</h2>
-        <p class="section-description">Oferecemos atendimento especializado com tecnologia de ponta e equipe qualificada em todo o Brasil.</p>
+    <!-- ABOUT / FEATURES STRIP -->
+    <section class="features-strip" id="sobre">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item animate-on-scroll">
+            <div class="feature-icon">
+              <i class="far fa-clock"></i>
+            </div>
+            <p class="feature-title">Atendimento<br />24 Horas</p>
+          </div>
+          <div class="feature-item animate-on-scroll delay-1">
+            <div class="feature-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <p class="feature-title">Cobertura<br />Nacional</p>
+          </div>
+          <div class="feature-item animate-on-scroll delay-2">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <p class="feature-title">Equipe<br />Especializada</p>
+          </div>
+          <div class="feature-item animate-on-scroll delay-3">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <p class="feature-title">Agilidade na<br />Regulação</p>
+          </div>
+          <div class="feature-item animate-on-scroll delay-4">
+            <div class="feature-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <p class="feature-title">Atendimento<br />Empresarial</p>
+          </div>
+        </div>
       </div>
-      <div class="services-grid">
-        <div class="service-card animate-on-scroll">
-          <div class="service-card-bg" style="background-image: url('images/serv-regulacao.jpeg')"></div>
-          <div class="service-card-overlay"></div>
-          <div class="service-card-content">
-            <div class="service-icon-circle">
-              <i class="fas fa-file-clipboard"></i>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section-padding" id="servicos">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Nossos Serviços</p>
+          <h2 class="section-title">
+            Soluções completas para cada tipo de sinistro
+          </h2>
+          <p class="section-description">
+            Oferecemos atendimento especializado com tecnologia de ponta e
+            equipe qualificada em todo o Brasil.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card animate-on-scroll">
+            <div
+              class="service-card-bg"
+              style="
+                background-image: url(&quot;images/serv-regulacao.jpeg&quot;);
+              "
+            ></div>
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon-circle">
+                <i class="fas fa-file-clipboard"></i>
+              </div>
+              <h3 class="service-card-title">Regulação de Sinistros</h3>
+              <p class="service-card-desc">
+                Análise técnica completa dos eventos para garantir uma regulação
+                justa, ágil e transparente.
+              </p>
+              <span class="service-arrow"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
             </div>
-            <h3 class="service-card-title">Regulação de Sinistros</h3>
-            <p class="service-card-desc">Análise técnica completa dos eventos para garantir uma regulação justa, ágil e transparente.</p>
-            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+          <div class="service-card animate-on-scroll delay-1">
+            <div
+              class="service-card-bg"
+              style="
+                background-image: url(&quot;images/serv-vistorias.jpeg&quot;);
+              "
+            ></div>
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon-circle">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3 class="service-card-title">Vistorias</h3>
+              <p class="service-card-desc">
+                Vistorias presenciais com profissionais qualificados em todo o
+                território nacional.
+              </p>
+              <span class="service-arrow"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </div>
+          <div class="service-card animate-on-scroll delay-2">
+            <div
+              class="service-card-bg"
+              style="
+                background-image: url(&quot;images/serv-rodoviario.jpeg&quot;);
+              "
+            ></div>
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon-circle">
+                <i class="fas fa-truck"></i>
+              </div>
+              <h3 class="service-card-title">Transporte Rodoviário</h3>
+              <p class="service-card-desc">
+                Especialistas em sinistros envolvendo caminhões, carretas e
+                cargas em transportes terrestres.
+              </p>
+              <span class="service-arrow"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </div>
+          <div class="service-card animate-on-scroll delay-3">
+            <div
+              class="service-card-bg"
+              style="background-image: url(&quot;images/serv-aereo.jpeg&quot;)"
+            ></div>
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon-circle">
+                <i class="fas fa-plane"></i>
+              </div>
+              <h3 class="service-card-title">Transporte Aéreo</h3>
+              <p class="service-card-desc">
+                Avaliação técnica para sinistros com cargas aéreas, garantindo
+                rapidez e precisão.
+              </p>
+              <span class="service-arrow"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </div>
+          <div class="service-card animate-on-scroll delay-4">
+            <div
+              class="service-card-bg"
+              style="
+                background-image: url(&quot;images/serv-maritimo.jpeg&quot;);
+              "
+            ></div>
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon-circle">
+                <i class="fas fa-ship"></i>
+              </div>
+              <h3 class="service-card-title">Transporte Marítimo</h3>
+              <p class="service-card-desc">
+                Perícias e vistorias em cargas, contêineres e operações
+                portuárias.
+              </p>
+              <span class="service-arrow"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </div>
+          <div class="service-card animate-on-scroll delay-5">
+            <div
+              class="service-card-bg"
+              style="
+                background-image: url(&quot;images/elaboracao-de-laudos-tecnicos-13.webp&quot;);
+              "
+            ></div>
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon-circle">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h3 class="service-card-title">Relatórios Técnicos</h3>
+
+              <p class="service-card-desc">
+                Elaboração de laudos e relatórios detalhados para seguradoras e
+                empresas.
+              </p>
+              <span class="service-arrow"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
           </div>
         </div>
-        <div class="service-card animate-on-scroll delay-1">
-          <div class="service-card-bg" style="background-image: url('images/serv-vistorias.jpeg')"></div>
-          <div class="service-card-overlay"></div>
-          <div class="service-card-content">
-            <div class="service-icon-circle">
-              <i class="fas fa-search"></i>
-            </div>
-            <h3 class="service-card-title">Vistorias</h3>
-            <p class="service-card-desc">Vistorias presenciais com profissionais qualificados em todo o território nacional.</p>
-            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
-          </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process section-padding" id="processo">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Como Funciona</p>
+          <h2 class="section-title">Nosso processo é rápido e eficiente</h2>
+          <p class="section-description process-desc">
+            Do acionamento à finalização, acompanhamos cada etapa com
+            excelência.
+          </p>
         </div>
-        <div class="service-card animate-on-scroll delay-2">
-          <div class="service-card-bg" style="background-image: url('images/serv-rodoviario.jpeg')"></div>
-          <div class="service-card-overlay"></div>
-          <div class="service-card-content">
-            <div class="service-icon-circle">
-              <i class="fas fa-truck"></i>
+        <div class="process-timeline">
+          <div class="process-step animate-on-scroll">
+            <div class="process-number">1</div>
+            <div class="process-step-icon">
+              <i class="fas fa-phone-alt"></i>
             </div>
-            <h3 class="service-card-title">Transporte Rodoviário</h3>
-            <p class="service-card-desc">Especialistas em sinistros envolvendo caminhões, carretas e cargas em transportes terrestres.</p>
-            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+            <h4 class="process-step-title">Acionamento</h4>
+            <p class="process-step-desc">
+              Você solicita o atendimento 24h por telefone ou WhatsApp.
+            </p>
           </div>
-        </div>
-        <div class="service-card animate-on-scroll delay-3">
-          <div class="service-card-bg" style="background-image: url('images/serv-aereo.jpeg')"></div>
-          <div class="service-card-overlay"></div>
-          <div class="service-card-content">
-            <div class="service-icon-circle">
-              <i class="fas fa-plane"></i>
+          <div class="process-step animate-on-scroll delay-1">
+            <div class="process-number">2</div>
+            <div class="process-step-icon">
+              <i class="fas fa-map-marker-alt"></i>
             </div>
-            <h3 class="service-card-title">Transporte Aéreo</h3>
-            <p class="service-card-desc">Avaliação técnica para sinistros com cargas aéreas, garantindo rapidez e precisão.</p>
-            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+            <h4 class="process-step-title">Deslocamento</h4>
+            <p class="process-step-desc">
+              Nossa equipe se desloca imediatamente ao local do sinistro.
+            </p>
           </div>
-        </div>
-        <div class="service-card animate-on-scroll delay-4">
-          <div class="service-card-bg" style="background-image: url('images/serv-maritimo.jpeg')"></div>
-          <div class="service-card-overlay"></div>
-          <div class="service-card-content">
-            <div class="service-icon-circle">
-              <i class="fas fa-ship"></i>
+          <div class="process-step animate-on-scroll delay-2">
+            <div class="process-number">3</div>
+            <div class="process-step-icon">
+              <i class="fas fa-clipboard-check"></i>
             </div>
-            <h3 class="service-card-title">Transporte Marítimo</h3>
-            <p class="service-card-desc">Perícias e vistorias em cargas, contêineres e operações portuárias.</p>
-            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+            <h4 class="process-step-title">Vistoria</h4>
+            <p class="process-step-desc">
+              Realizamos a vistoria técnica com precisão e registro completo.
+            </p>
           </div>
-        </div>
-        <div class="service-card animate-on-scroll delay-5">
-          <div class="service-card-bg" style="background-image: url('images/elaboracao-de-laudos-tecnicos-13.webp')"></div>
-          <div class="service-card-overlay"></div>
-          <div class="service-card-content">
-            <div class="service-icon-circle">
+          <div class="process-step animate-on-scroll delay-3">
+            <div class="process-number">4</div>
+            <div class="process-step-icon">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <h4 class="process-step-title">Levantamento Técnico</h4>
+            <p class="process-step-desc">
+              Coletamos e analisamos todas as informações necessárias.
+            </p>
+          </div>
+          <div class="process-step animate-on-scroll delay-4">
+            <div class="process-number">5</div>
+            <div class="process-step-icon">
               <i class="fas fa-file-alt"></i>
             </div>
-            <h3 class="service-card-title">Relatórios Técnicos</h3>
-          
-            <p class="service-card-desc">Elaboração de laudos e relatórios detalhados para seguradoras e empresas.</p>
-            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+            <h4 class="process-step-title">Relatório</h4>
+            <p class="process-step-desc">
+              Emitimos relatório técnico detalhado com agilidade e clareza.
+            </p>
+          </div>
+          <div class="process-step animate-on-scroll delay-5">
+            <div class="process-number">6</div>
+            <div class="process-step-icon">
+              <i class="fas fa-check-double"></i>
+            </div>
+            <h4 class="process-step-title">Finalização</h4>
+            <p class="process-step-desc">
+              Acompanhamos o processo até a conclusão junto à
+              seguradora/cliente.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROCESS SECTION -->
-  <section class="process section-padding" id="processo">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <p class="section-subtitle">Como Funciona</p>
-        <h2 class="section-title">Nosso processo é rápido e eficiente</h2>
-        <p class="section-description process-desc">Do acionamento à finalização, acompanhamos cada etapa com excelência.</p>
+    <!-- ABOUT TEXT SECTION -->
+    <section
+      class="about-text section-padding"
+      id="about-text"
+      style="background: var(--cm-white)"
+    >
+      <div class="container">
+        <div class="about-grid">
+          <div class="animate-on-scroll">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 20px;
+              "
+            >
+              <img src="images/cm-logo.jpg" alt="CM" style="height: 40px" />
+              <span
+                style="
+                  font-family: var(--font-heading);
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: var(--cm-dark);
+                "
+                >CM REGULADORA</span
+              >
+            </div>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--cm-gray-600);
+                line-height: 1.8;
+                margin-bottom: 16px;
+              "
+            >
+              A <strong>CM Reguladora de Sinistros</strong> é uma empresa
+              especializada em regulação e vistoria de sinistros de transporte
+              rodoviário, aéreo e marítimo. Com mais de 10 anos de experiência,
+              oferecemos soluções completas para seguradoras, transportadoras,
+              indústrias e empresas de logística em todo o território nacional.
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--cm-gray-600);
+                line-height: 1.8;
+              "
+            >
+              Nossa equipe técnica está disponível
+              <strong>24 horas por dia</strong>, prontos para atender qualquer
+              tipo de sinistro com agilidade, precisão e profissionalismo.
+              Trabalhamos com tecnologia de ponta para garantir laudos
+              detalhados e relatórios completos.
+            </p>
+          </div>
+          <div class="animate-on-scroll delay-2" style="text-align: center">
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px"
+            >
+              <div
+                class="about-stat-card"
+                style="
+                  background: var(--cm-gray-50);
+                  border-radius: var(--radius-lg);
+                  padding: 24px 16px;
+                  text-align: center;
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--font-heading);
+                    font-size: 32px;
+                    font-weight: 900;
+                    color: var(--cm-red);
+                    margin-bottom: 4px;
+                  "
+                >
+                  24h
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--cm-gray-500);
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    font-weight: 600;
+                  "
+                >
+                  Atendimento<br />Sem Parar
+                </div>
+              </div>
+              <div
+                class="about-stat-card"
+                style="
+                  background: var(--cm-gray-50);
+                  border-radius: var(--radius-lg);
+                  padding: 24px 16px;
+                  text-align: center;
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--font-heading);
+                    font-size: 32px;
+                    font-weight: 900;
+                    color: var(--cm-red);
+                    margin-bottom: 4px;
+                  "
+                >
+                  27
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--cm-gray-500);
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    font-weight: 600;
+                  "
+                >
+                  Estados<br />Atendidos
+                </div>
+              </div>
+              <div
+                class="about-stat-card"
+                style="
+                  background: var(--cm-gray-50);
+                  border-radius: var(--radius-lg);
+                  padding: 24px 16px;
+                  text-align: center;
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--font-heading);
+                    font-size: 32px;
+                    font-weight: 900;
+                    color: var(--cm-red);
+                    margin-bottom: 4px;
+                  "
+                >
+                  +10.000
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--cm-gray-500);
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    font-weight: 600;
+                  "
+                >
+                  Atendimentos<br />Realizados
+                </div>
+              </div>
+              <div
+                class="about-stat-card"
+                style="
+                  background: var(--cm-gray-50);
+                  border-radius: var(--radius-lg);
+                  padding: 24px 16px;
+                  text-align: center;
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--font-heading);
+                    font-size: 32px;
+                    font-weight: 900;
+                    color: var(--cm-red);
+                    margin-bottom: 4px;
+                  "
+                >
+                  +17
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--cm-gray-500);
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    font-weight: 600;
+                  "
+                >
+                  Anos de<br />Experiência
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="process-timeline">
-        <div class="process-step animate-on-scroll">
-          <div class="process-number">1</div>
-          <div class="process-step-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <h4 class="process-step-title">Acionamento</h4>
-          <p class="process-step-desc">Você solicita o atendimento 24h por telefone ou WhatsApp.</p>
-        </div>
-        <div class="process-step animate-on-scroll delay-1">
-          <div class="process-number">2</div>
-          <div class="process-step-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <h4 class="process-step-title">Deslocamento</h4>
-          <p class="process-step-desc">Nossa equipe se desloca imediatamente ao local do sinistro.</p>
-        </div>
-        <div class="process-step animate-on-scroll delay-2">
-          <div class="process-number">3</div>
-          <div class="process-step-icon">
-            <i class="fas fa-clipboard-check"></i>
-          </div>
-          <h4 class="process-step-title">Vistoria</h4>
-          <p class="process-step-desc">Realizamos a vistoria técnica com precisão e registro completo.</p>
-        </div>
-        <div class="process-step animate-on-scroll delay-3">
-          <div class="process-number">4</div>
-          <div class="process-step-icon">
-            <i class="fas fa-search-plus"></i>
-          </div>
-          <h4 class="process-step-title">Levantamento Técnico</h4>
-          <p class="process-step-desc">Coletamos e analisamos todas as informações necessárias.</p>
-        </div>
-        <div class="process-step animate-on-scroll delay-4">
-          <div class="process-number">5</div>
-          <div class="process-step-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h4 class="process-step-title">Relatório</h4>
-          <p class="process-step-desc">Emitimos relatório técnico detalhado com agilidade e clareza.</p>
-        </div>
-        <div class="process-step animate-on-scroll delay-5">
-          <div class="process-number">6</div>
-          <div class="process-step-icon">
-            <i class="fas fa-check-double"></i>
-          </div>
-          <h4 class="process-step-title">Finalização</h4>
-          <p class="process-step-desc">Acompanhamos o processo até a conclusão junto à seguradora/cliente.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT TEXT SECTION -->
-  <section class="about-text section-padding" id="about-text" style="background: var(--cm-white);">
-    <div class="container">
-      <div class="about-grid">
-        <div class="animate-on-scroll">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
-            <img src="images/cm-logo.jpg" alt="CM" style="height:40px;" />
-            <span style="font-family:var(--font-heading);font-size:14px;font-weight:700;color:var(--cm-dark);">CM REGULADORA</span>
+    <!-- SEGMENTS SECTION -->
+    <section class="segments section-padding" id="segmentos">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Áreas de Atuação</p>
+          <h2 class="section-title">Atendemos diversos segmentos</h2>
+        </div>
+        <div class="segments-grid">
+          <div class="segment-card animate-on-scroll">
+            <div class="segment-img">
+              <img
+                src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=200"
+                alt="Transporte Rodoviário"
+              />
+            </div>
+            <p class="segment-title">Transporte Rodoviário</p>
           </div>
-          <p style="font-size:15px;color:var(--cm-gray-600);line-height:1.8;margin-bottom:16px;">
-            A <strong>CM Reguladora de Sinistros</strong> é uma empresa especializada em regulação e vistoria de sinistros de transporte rodoviário, aéreo e marítimo. Com mais de 10 anos de experiência, oferecemos soluções completas para seguradoras, transportadoras, indústrias e empresas de logística em todo o território nacional.
+          <div class="segment-card animate-on-scroll delay-1">
+            <div class="segment-img">
+              <img src="images/serv-aereo.jpeg" alt="Transporte Aéreo" />
+            </div>
+            <p class="segment-title">Transporte Aéreo</p>
+          </div>
+          <div class="segment-card animate-on-scroll delay-2">
+            <div class="segment-img">
+              <img src="images/serv-maritimo.jpeg" alt="Transporte Marítimo" />
+            </div>
+            <p class="segment-title">Transporte Marítimo</p>
+          </div>
+          <div class="segment-card animate-on-scroll delay-3">
+            <div class="segment-img">
+              <img src="images/images (2).jpg" alt="Indústrias" />
+            </div>
+            <p class="segment-title">Indústrias</p>
+          </div>
+          <div class="segment-card animate-on-scroll delay-4">
+            <div class="segment-img">
+              <img
+                src="images/images (3).jpg"
+                alt="Transportadoras e Logística"
+              />
+            </div>
+            <p class="segment-title">Transportadoras e Logística</p>
+          </div>
+          <div class="segment-card animate-on-scroll delay-5">
+            <div class="segment-img">
+              <img src="images/images (4).jpg" alt="Seguradoras e Corretoras" />
+            </div>
+            <p class="segment-title">Seguradoras e Corretoras</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us section-padding" id="contato">
+      <div class="container">
+        <div class="why-us-header animate-on-scroll">
+          <h2>Por que escolher a<br />CM Reguladora?</h2>
+          <p>
+            Compromisso com a excelência, agilidade e confiança em cada
+            atendimento.
           </p>
-          <p style="font-size:15px;color:var(--cm-gray-600);line-height:1.8;">
-            Nossa equipe técnica está disponível <strong>24 horas por dia</strong>, prontos para atender qualquer tipo de sinistro com agilidade, precisão e profissionalismo. Trabalhamos com tecnologia de ponta para garantir laudos detalhados e relatórios completos.
+        </div>
+        <div class="why-us-grid">
+          <div class="why-us-item animate-on-scroll">
+            <div class="why-us-icon"><i class="fas fa-headset"></i></div>
+            <h4 class="why-us-item-title">Atendimento 24h</h4>
+            <p class="why-us-item-desc">
+              Disponível para você a qualquer momento.
+            </p>
+          </div>
+          <div class="why-us-item animate-on-scroll delay-1">
+            <div class="why-us-icon"><i class="fas fa-globe-americas"></i></div>
+            <h4 class="why-us-item-title">Cobertura Nacional</h4>
+            <p class="why-us-item-desc">
+              Atendemos em todo o território brasileiro.
+            </p>
+          </div>
+          <div class="why-us-item animate-on-scroll delay-2">
+            <div class="why-us-icon"><i class="fas fa-bolt"></i></div>
+            <h4 class="why-us-item-title">Agilidade no Deslocamento</h4>
+            <p class="why-us-item-desc">
+              Equipe pronta para chegar rápido ao local.
+            </p>
+          </div>
+          <div class="why-us-item animate-on-scroll delay-3">
+            <div class="why-us-icon"><i class="fas fa-user-tie"></i></div>
+            <h4 class="why-us-item-title">Equipe Qualificada</h4>
+            <p class="why-us-item-desc">
+              Profissionais experientes e constantemente treinados.
+            </p>
+          </div>
+          <div class="why-us-item animate-on-scroll delay-4">
+            <div class="why-us-icon"><i class="fas fa-file-signature"></i></div>
+            <h4 class="why-us-item-title">Relatórios Completos</h4>
+            <p class="why-us-item-desc">
+              Documentos técnicos detalhados e precisos.
+            </p>
+          </div>
+          <div class="why-us-item animate-on-scroll delay-5">
+            <div class="why-us-icon"><i class="fas fa-user-cog"></i></div>
+            <h4 class="why-us-item-title">Atendimento Personalizado</h4>
+            <p class="why-us-item-desc">
+              Soluções sob medida para cada cliente.
+            </p>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO PROFISSIONAL -->
+        <div class="form-section animate-on-scroll" id="formSection">
+          <div class="form-header">
+            <p class="section-subtitle">Entre em Contato</p>
+            <h2>Solicite um Atendimento</h2>
+            <p>
+              Preencha o formulário abaixo e nossa equipe entrará em contato
+              rapidamente.
+            </p>
+          </div>
+          <div class="form-wrapper">
+            <div class="form-image-side">
+              <div class="form-image-content">
+                <h3>CM Reguladora de Sinistros</h3>
+                <p>
+                  Estamos prontos para atender sua demanda com agilidade e
+                  profissionalismo.
+                </p>
+                <div class="form-contact-info">
+                  <div class="form-contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>(63) 9 9966-6745</span>
+                  </div>
+                  <div class="form-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contato@cmreguladora.com.br</span>
+                  </div>
+                  <div class="form-contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Atendimento 24 horas</span>
+                  </div>
+                  <div class="form-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Cobertura Nacional</span>
+                  </div>
+                </div>
+                <div class="form-decoration">
+                  <div class="form-deco-circle"></div>
+                  <div class="form-deco-circle deco-2"></div>
+                  <div class="form-deco-circle deco-3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-fields-side">
+              <form class="professional-form" id="contactForm" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="formNome">Nome Completo *</label>
+                    <div class="input-wrapper">
+                      <i class="fas fa-user input-icon"></i>
+                      <input
+                        type="text"
+                        id="formNome"
+                        name="nome"
+                        placeholder="Seu nome completo"
+                        required
+                      />
+                    </div>
+                    <span class="form-error"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="formEmpresa">Empresa</label>
+                    <div class="input-wrapper">
+                      <i class="fas fa-building input-icon"></i>
+                      <input
+                        type="text"
+                        id="formEmpresa"
+                        name="empresa"
+                        placeholder="Nome da empresa"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="formEmail">E-mail *</label>
+                    <div class="input-wrapper">
+                      <i class="fas fa-envelope input-icon"></i>
+                      <input
+                        type="email"
+                        id="formEmail"
+                        name="email"
+                        placeholder="seu@email.com"
+                        required
+                      />
+                    </div>
+                    <span class="form-error"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="formTelefone">Telefone / WhatsApp *</label>
+                    <div class="input-wrapper">
+                      <i class="fas fa-phone input-icon"></i>
+                      <input
+                        type="tel"
+                        id="formTelefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                        required
+                      />
+                    </div>
+                    <span class="form-error"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="formServico">Tipo de Serviço *</label>
+                  <div class="input-wrapper select-wrapper">
+                    <i class="fas fa-cogs input-icon"></i>
+                    <select id="formServico" name="servico" required>
+                      <option value="" disabled selected>
+                        Selecione o tipo de serviço
+                      </option>
+                      <option value="regulacao">Regulação de Sinistros</option>
+                      <option value="vistoria">Vistoria Presencial</option>
+                      <option value="rodoviario">Transporte Rodoviário</option>
+                      <option value="aereo">Transporte Aéreo</option>
+                      <option value="maritimo">Transporte Marítimo</option>
+                      <option value="relatorio">Relatório Técnico</option>
+                      <option value="outro">Outro</option>
+                    </select>
+                  </div>
+                  <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="formMensagem">Mensagem *</label>
+                  <div class="input-wrapper textarea-wrapper">
+                    <i class="fas fa-comment-alt input-icon"></i>
+                    <textarea
+                      id="formMensagem"
+                      name="mensagem"
+                      placeholder="Descreva sua necessidade..."
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <span class="form-error"></span>
+                </div>
+                <button type="submit" class="btn-primary form-submit-btn">
+                  <i class="fas fa-paper-plane"></i> Enviar Solicitação
+                </button>
+                <div class="form-success" id="formSuccess">
+                  <i class="fas fa-check-circle"></i>
+                  <p>
+                    Mensagem enviada com sucesso! Entraremos em contato em
+                    breve.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials section-padding">
+      <div class="container">
+        <div class="testimonials-header animate-on-scroll">
+          <p class="section-subtitle">O que nossos clientes dizem</p>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonials-track" id="testimonialsTrack">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  "Atendimento rápido, equipe extremamente profissional e
+                  relatórios muito completos. A CM Reguladora é nossa parceira
+                  de confiança."
+                </p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">
+                    <i class="fas fa-truck"></i>
+                  </div>
+                  <div>
+                    <p class="testimonial-author-name">TransLog Transportes</p>
+                    <p class="testimonial-author-role">Gerente de Operações</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  "Precisávamos de agilidade e encontramos na CM Reguladora.
+                  Atendimento 24h que realmente funciona em todo o Brasil."
+                </p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div>
+                    <p class="testimonial-author-name">Seguro Forte Seguros</p>
+                    <p class="testimonial-author-role">
+                      Coordenador de Sinistros
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  "Excelência técnica e comprometimento do início ao fim do
+                  processo de regulação. Recomendamos!"
+                </p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">
+                    <i class="fas fa-ship"></i>
+                  </div>
+                  <div>
+                    <p class="testimonial-author-name">Global Cargo</p>
+                    <p class="testimonial-author-role">Diretor Executivo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  "A CM Reguladora sempre entrega relatórios detalhados e
+                  precisos. São nosso parceiro principal para sinistros
+                  marítimos."
+                </p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">
+                    <i class="fas fa-anchor"></i>
+                  </div>
+                  <div>
+                    <p class="testimonial-author-name">
+                      Porto Seguro Logística
+                    </p>
+                    <p class="testimonial-author-role">Analista de Seguros</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-nav animate-on-scroll">
+          <button class="testimonial-btn" id="prevBtn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="testimonial-btn" id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSAS BASES (CARROSSEL DE IMAGENS) -->
+    <section class="bases-gallery section-padding" id="bases">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Presença Nacional</p>
+          <h2 class="section-title">Conheça Nossas Bases</h2>
+          <p class="section-description">
+            Estrutura própria e parceiros estratégicos posicionados em todo o
+            Brasil para garantir atendimento rápido onde você precisar.
           </p>
         </div>
-        <div class="animate-on-scroll delay-2" style="text-align:center;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <div class="about-stat-card" style="background:var(--cm-gray-50);border-radius:var(--radius-lg);padding:24px 16px;text-align:center;">
-              <div style="font-family:var(--font-heading);font-size:32px;font-weight:900;color:var(--cm-red);margin-bottom:4px;">24h</div>
-              <div style="font-size:12px;color:var(--cm-gray-500);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Atendimento<br>Sem Parar</div>
-            </div>
-            <div class="about-stat-card" style="background:var(--cm-gray-50);border-radius:var(--radius-lg);padding:24px 16px;text-align:center;">
-              <div style="font-family:var(--font-heading);font-size:32px;font-weight:900;color:var(--cm-red);margin-bottom:4px;">27</div>
-              <div style="font-size:12px;color:var(--cm-gray-500);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Estados<br>Atendidos</div>
-            </div>
-            <div class="about-stat-card" style="background:var(--cm-gray-50);border-radius:var(--radius-lg);padding:24px 16px;text-align:center;">
-              <div style="font-family:var(--font-heading);font-size:32px;font-weight:900;color:var(--cm-red);margin-bottom:4px;">+5000</div>
-              <div style="font-size:12px;color:var(--cm-gray-500);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Vistorias<br>Realizadas</div>
-            </div>
-            <div class="about-stat-card" style="background:var(--cm-gray-50);border-radius:var(--radius-lg);padding:24px 16px;text-align:center;">
-              <div style="font-family:var(--font-heading);font-size:32px;font-weight:900;color:var(--cm-red);margin-bottom:4px;">+10</div>
-              <div style="font-size:12px;color:var(--cm-gray-500);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Anos de<br>Experiência</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEGMENTS SECTION -->
-  <section class="segments section-padding" id="segmentos">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <p class="section-subtitle">Áreas de Atuação</p>
-        <h2 class="section-title">Atendemos diversos segmentos</h2>
-      </div>
-      <div class="segments-grid">
-        <div class="segment-card animate-on-scroll">
-          <div class="segment-img">
-            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=200" alt="Transporte Rodoviário" />
-          </div>
-          <p class="segment-title">Transporte Rodoviário</p>
-        </div>
-        <div class="segment-card animate-on-scroll delay-1">
-          <div class="segment-img">
-            <img src="images/serv-aereo.jpeg" alt="Transporte Aéreo" />
-          </div>
-          <p class="segment-title">Transporte Aéreo</p>
-        </div>
-        <div class="segment-card animate-on-scroll delay-2">
-          <div class="segment-img">
-            <img src="images/serv-maritimo.jpeg" alt="Transporte Marítimo" />
-          </div>
-          <p class="segment-title">Transporte Marítimo</p>
-        </div>
-        <div class="segment-card animate-on-scroll delay-3">
-          <div class="segment-img">
-            <img src="images/images (2).jpg" alt="Indústrias" />
-          </div>
-          <p class="segment-title">Indústrias</p>
-        </div>
-        <div class="segment-card animate-on-scroll delay-4">
-          <div class="segment-img">
-            <img src="images/images (3).jpg" alt="Transportadoras e Logística" />
-          </div>
-          <p class="segment-title">Transportadoras e Logística</p>
-        </div>
-        <div class="segment-card animate-on-scroll delay-5">
-          <div class="segment-img">
-            <img src="images/images (4).jpg" alt="Seguradoras e Corretoras" />
-          </div>
-          <p class="segment-title">Seguradoras e Corretoras</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="why-us section-padding" id="contato">
-    <div class="container">
-      <div class="why-us-header animate-on-scroll">
-        <h2>Por que escolher a<br>CM Reguladora?</h2>
-        <p>Compromisso com a excelência, agilidade e confiança em cada atendimento.</p>
-      </div>
-      <div class="why-us-grid">
-        <div class="why-us-item animate-on-scroll">
-          <div class="why-us-icon"><i class="fas fa-headset"></i></div>
-          <h4 class="why-us-item-title">Atendimento 24h</h4>
-          <p class="why-us-item-desc">Disponível para você a qualquer momento.</p>
-        </div>
-        <div class="why-us-item animate-on-scroll delay-1">
-          <div class="why-us-icon"><i class="fas fa-globe-americas"></i></div>
-          <h4 class="why-us-item-title">Cobertura Nacional</h4>
-          <p class="why-us-item-desc">Atendemos em todo o território brasileiro.</p>
-        </div>
-        <div class="why-us-item animate-on-scroll delay-2">
-          <div class="why-us-icon"><i class="fas fa-bolt"></i></div>
-          <h4 class="why-us-item-title">Agilidade no Deslocamento</h4>
-          <p class="why-us-item-desc">Equipe pronta para chegar rápido ao local.</p>
-        </div>
-        <div class="why-us-item animate-on-scroll delay-3">
-          <div class="why-us-icon"><i class="fas fa-user-tie"></i></div>
-          <h4 class="why-us-item-title">Equipe Qualificada</h4>
-          <p class="why-us-item-desc">Profissionais experientes e constantemente treinados.</p>
-        </div>
-        <div class="why-us-item animate-on-scroll delay-4">
-          <div class="why-us-icon"><i class="fas fa-file-signature"></i></div>
-          <h4 class="why-us-item-title">Relatórios Completos</h4>
-          <p class="why-us-item-desc">Documentos técnicos detalhados e precisos.</p>
-        </div>
-        <div class="why-us-item animate-on-scroll delay-5">
-          <div class="why-us-icon"><i class="fas fa-user-cog"></i></div>
-          <h4 class="why-us-item-title">Atendimento Personalizado</h4>
-          <p class="why-us-item-desc">Soluções sob medida para cada cliente.</p>
-        </div>
-      </div>
-
-      <!-- FORMULÁRIO PROFISSIONAL -->
-      <div class="form-section animate-on-scroll" id="formSection">
-        <div class="form-header">
-          <p class="section-subtitle">Entre em Contato</p>
-          <h2>Solicite um Atendimento</h2>
-          <p>Preencha o formulário abaixo e nossa equipe entrará em contato rapidamente.</p>
-        </div>
-        <div class="form-wrapper">
-          <div class="form-image-side">
-            <div class="form-image-content">
-              <h3>CM Reguladora de Sinistros</h3>
-              <p>Estamos prontos para atender sua demanda com agilidade e profissionalismo.</p>
-              <div class="form-contact-info">
-                <div class="form-contact-item">
-                  <i class="fas fa-phone-alt"></i>
-                  <span>(63) 9 9966-6745</span>
-                </div>
-                <div class="form-contact-item">
-                  <i class="fas fa-envelope"></i>
-                  <span>contato@cmreguladora.com.br</span>
-                </div>
-                <div class="form-contact-item">
-                  <i class="fas fa-clock"></i>
-                  <span>Atendimento 24 horas</span>
-                </div>
-                <div class="form-contact-item">
+        <div class="bases-slider">
+          <div class="bases-track" id="basesTrack">
+            <div class="base-card animate-on-scroll">
+              <div class="base-card-img">
+                <img
+                  src="images/WhatsApp Image 2026-07-30 at 15.55.36 (1).jpeg"
+                  alt="Base CM Reguladora - Unidade 01"
+                  loading="lazy"
+                />
+                <div class="base-card-caption">
                   <i class="fas fa-map-marker-alt"></i>
-                  <span>Cobertura Nacional</span>
-                </div>
-              </div>
-              <div class="form-decoration">
-                <div class="form-deco-circle"></div>
-                <div class="form-deco-circle deco-2"></div>
-                <div class="form-deco-circle deco-3"></div>
-              </div>
-            </div>
-          </div>
-          <div class="form-fields-side">
-            <form class="professional-form" id="contactForm" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="formNome">Nome Completo *</label>
-                  <div class="input-wrapper">
-                    <i class="fas fa-user input-icon"></i>
-                    <input type="text" id="formNome" name="nome" placeholder="Seu nome completo" required />
-                  </div>
-                  <span class="form-error"></span>
-                </div>
-                <div class="form-group">
-                  <label for="formEmpresa">Empresa</label>
-                  <div class="input-wrapper">
-                    <i class="fas fa-building input-icon"></i>
-                    <input type="text" id="formEmpresa" name="empresa" placeholder="Nome da empresa" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="formEmail">E-mail *</label>
-                  <div class="input-wrapper">
-                    <i class="fas fa-envelope input-icon"></i>
-                    <input type="email" id="formEmail" name="email" placeholder="seu@email.com" required />
-                  </div>
-                  <span class="form-error"></span>
-                </div>
-                <div class="form-group">
-                  <label for="formTelefone">Telefone / WhatsApp *</label>
-                  <div class="input-wrapper">
-                    <i class="fas fa-phone input-icon"></i>
-                    <input type="tel" id="formTelefone" name="telefone" placeholder="(00) 00000-0000" required />
-                  </div>
-                  <span class="form-error"></span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="formServico">Tipo de Serviço *</label>
-                <div class="input-wrapper select-wrapper">
-                  <i class="fas fa-cogs input-icon"></i>
-                  <select id="formServico" name="servico" required>
-                    <option value="" disabled selected>Selecione o tipo de serviço</option>
-                    <option value="regulacao">Regulação de Sinistros</option>
-                    <option value="vistoria">Vistoria Presencial</option>
-                    <option value="rodoviario">Transporte Rodoviário</option>
-                    <option value="aereo">Transporte Aéreo</option>
-                    <option value="maritimo">Transporte Marítimo</option>
-                    <option value="relatorio">Relatório Técnico</option>
-                    <option value="outro">Outro</option>
-                  </select>
-                </div>
-                <span class="form-error"></span>
-              </div>
-              <div class="form-group">
-                <label for="formMensagem">Mensagem *</label>
-                <div class="input-wrapper textarea-wrapper">
-                  <i class="fas fa-comment-alt input-icon"></i>
-                  <textarea id="formMensagem" name="mensagem" placeholder="Descreva sua necessidade..." rows="4" required></textarea>
-                </div>
-                <span class="form-error"></span>
-              </div>
-              <button type="submit" class="btn-primary form-submit-btn">
-                <i class="fas fa-paper-plane"></i> Enviar Solicitação
-              </button>
-              <div class="form-success" id="formSuccess">
-                <i class="fas fa-check-circle"></i>
-                <p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials section-padding">
-    <div class="container">
-      <div class="testimonials-header animate-on-scroll">
-        <p class="section-subtitle">O que nossos clientes dizem</p>
-      </div>
-      <div class="testimonials-slider">
-        <div class="testimonials-track" id="testimonialsTrack">
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="testimonial-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">"Atendimento rápido, equipe extremamente profissional e relatórios muito completos. A CM Reguladora é nossa parceira de confiança."</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar"><i class="fas fa-truck"></i></div>
-                <div>
-                  <p class="testimonial-author-name">TransLog Transportes</p>
-                  <p class="testimonial-author-role">Gerente de Operações</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="testimonial-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">"Precisávamos de agilidade e encontramos na CM Reguladora. Atendimento 24h que realmente funciona em todo o Brasil."</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar"><i class="fas fa-shield-alt"></i></div>
-                <div>
-                  <p class="testimonial-author-name">Seguro Forte Seguros</p>
-                  <p class="testimonial-author-role">Coordenador de Sinistros</p>
+            <div class="base-card animate-on-scroll delay-1">
+              <div class="base-card-img">
+                <img
+                  src="images/WhatsApp Image 2026-07-30 at 15.55.36 (2).jpeg"
+                  alt="Base CM Reguladora - Unidade 02"
+                  loading="lazy"
+                />
+                <div class="base-card-caption">
+                  <i class="fas fa-map-marker-alt"></i>
+                  
                 </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="testimonial-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">"Excelência técnica e comprometimento do início ao fim do processo de regulação. Recomendamos!"</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar"><i class="fas fa-ship"></i></div>
-                <div>
-                  <p class="testimonial-author-name">Global Cargo</p>
-                  <p class="testimonial-author-role">Diretor Executivo</p>
+            <div class="base-card animate-on-scroll delay-2">
+              <div class="base-card-img">
+                <img
+                  src="images/WhatsApp Image 2026-07-30 at 15.55.36 (3).jpeg"
+                  alt="Base CM Reguladora - Unidade 03"
+                  loading="lazy"
+                />
+                <div class="base-card-caption">
+                  <i class="fas fa-map-marker-alt"></i>
+                  
                 </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="testimonial-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+            <div class="base-card animate-on-scroll delay-3">
+              <div class="base-card-img">
+                <img
+                  src="images/WhatsApp Image 2026-07-30 at 15.55.36.jpeg"
+                  alt="Base CM Reguladora - Unidade 04"
+                  loading="lazy"
+                />
+                <div class="base-card-caption">
+                  <i class="fas fa-map-marker-alt"></i>
+                  
+                </div>
               </div>
-              <p class="testimonial-text">"A CM Reguladora sempre entrega relatórios detalhados e precisos. São nosso parceiro principal para sinistros marítimos."</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar"><i class="fas fa-anchor"></i></div>
-                <div>
-                  <p class="testimonial-author-name">Porto Seguro Logística</p>
-                  <p class="testimonial-author-role">Analista de Seguros</p>
+            </div>
+            <div class="base-card animate-on-scroll delay-4">
+              <div class="base-card-img">
+                <img
+                  src="images/WhatsApp Image 2026-07-30 at 15.55.37 (1).jpeg"
+                  alt="Base CM Reguladora - Unidade 05"
+                  loading="lazy"
+                />
+                <div class="base-card-caption">
+                  <i class="fas fa-map-marker-alt"></i>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="base-card animate-on-scroll delay-5">
+              <div class="base-card-img">
+                <img
+                  src="images/WhatsApp Image 2026-07-30 at 15.55.37.jpeg"
+                  alt="Base CM Reguladora - Unidade 06"
+                  loading="lazy"
+                />
+                <div class="base-card-caption">
+                  <i class="fas fa-map-marker-alt"></i>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="bases-nav animate-on-scroll">
+          <button class="base-btn" id="basesPrevBtn" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="base-btn" id="basesNextBtn" aria-label="Próximo">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
-      <div class="testimonials-nav animate-on-scroll">
-        <button class="testimonial-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-        <button class="testimonial-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/cm-logo.jpg" alt="CM Reguladora de Sinistros" />
-          <p>Soluções completas em regulação e vistoria de sinistros de transporte rodoviário, aéreo e marítimo, com atendimento 24 horas em todo o Brasil.</p>
-          <div class="footer-social">
-            <a href="https://www.instagram.com/cmreguladora?igsh=MWE0a2thbWszbGxuZQ%3D%3D" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" aria-label="WhatsApp">
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="images/cm-logo.jpg" alt="CM Reguladora de Sinistros" />
+            <p>
+              Soluções completas em regulação e vistoria de sinistros de
+              transporte rodoviário, aéreo e marítimo, com atendimento 24 horas
+              em todo o Brasil.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://www.instagram.com/cmreguladora?igsh=MWE0a2thbWszbGxuZQ%3D%3D"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
+                target="_blank"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#segmentos">Segmentos</a></li>
+              <li><a href="#processo">Processo</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Serviços</h4>
+            <ul>
+              <li><a href="#servicos">Regulação de Sinistros</a></li>
+              <li><a href="#servicos">Vistorias</a></li>
+              <li><a href="#servicos">Transporte Rodoviário</a></li>
+              <li><a href="#servicos">Transporte Aéreo</a></li>
+              <li><a href="#servicos">Transporte Marítimo</a></li>
+              <li><a href="#servicos">Relatórios Técnicos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>(63) 9 9966-6745</span>
+            </div>
+            <div class="footer-contact-item">
               <i class="fab fa-whatsapp"></i>
-            </a>
+              <a
+                href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
+                target="_blank"
+                style="color: rgba(255, 255, 255, 0.7); font-size: 13px"
+                >Atendimento 24 horas</a
+              >
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Todo o território nacional</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>contato@cmreguladora.com.br</span>
+            </div>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Navegação</h4>
-          <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#segmentos">Segmentos</a></li>
-            <li><a href="#processo">Processo</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Serviços</h4>
-          <ul>
-            <li><a href="#servicos">Regulação de Sinistros</a></li>
-            <li><a href="#servicos">Vistorias</a></li>
-            <li><a href="#servicos">Transporte Rodoviário</a></li>
-            <li><a href="#servicos">Transporte Aéreo</a></li>
-            <li><a href="#servicos">Transporte Marítimo</a></li>
-            <li><a href="#servicos">Relatórios Técnicos</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contato</h4>
-          <div class="footer-contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <span>(63) 9 9966-6745</span>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fab fa-whatsapp"></i>
-            <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" style="color:rgba(255,255,255,0.7);font-size:13px;">Atendimento 24 horas</a>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Todo o território nacional</span>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>contato@cmreguladora.com.br</span>
-          </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 CM Reguladora de Sinistros. Todos os direitos
+            reservados. | Powered by <a href="www.criatech.online"></a>Cria
+            Tech💙
+          </p>
+          <a
+            href="https://www.instagram.com/cmreguladora"
+            target="_blank"
+            class="instagram-link"
+          >
+            <i class="fab fa-instagram"></i> @cmreguladora
+          </a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 CM Reguladora de Sinistros. Todos os direitos reservados. | Powered by <a href="www.criatech.online"></a>Cria Tech💙</p>
-        <a href="https://www.instagram.com/cmreguladora" target="_blank" class="instagram-link">
-          <i class="fab fa-instagram"></i> @cmreguladora
+    </footer>
+
+    <!-- WHATSAPP FLOATING -->
+    <div class="whatsapp-float">
+      <div class="whatsapp-popup" id="whatsappPopup">
+        <p class="whatsapp-popup-title">
+          <i class="fab fa-whatsapp" style="color: #25d366"></i> 24h
+        </p>
+        <p class="whatsapp-popup-phone">(63) 9 9966-6745</p>
+        <a
+          href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
+          target="_blank"
+          class="whatsapp-popup-btn"
+        >
+          <i class="fab fa-whatsapp"></i> Solicitar Atendimento Agora
         </a>
       </div>
+      <button class="whatsapp-btn" id="whatsappBtn" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </button>
     </div>
-  </footer>
 
-  <!-- WHATSAPP FLOATING -->
-  <div class="whatsapp-float">
-    <div class="whatsapp-popup" id="whatsappPopup">
-      <p class="whatsapp-popup-title"><i class="fab fa-whatsapp" style="color: #25D366;"></i> 24h</p>
-      <p class="whatsapp-popup-phone">(63) 9 9966-6745</p>
-      <a href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" class="whatsapp-popup-btn">
-        <i class="fab fa-whatsapp"></i> Solicitar Atendimento Agora
-      </a>
-    </div>
-    <button class="whatsapp-btn" id="whatsappBtn" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+      <i class="fas fa-chevron-up"></i>
     </button>
-  </div>
 
-  <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <script src="js/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
