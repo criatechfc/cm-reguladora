@@ -274,13 +274,10 @@
       flex-shrink: 0;
     }
 
-
-    @media (min-width: 480px) {
-      .header-logo img { height: 62px; }
-    }
-
-    @media (min-width: 768px) {
-      .header-logo img { height: 70px; }
+    /* Tamanho normal da logo no mobile e tablet */
+    .header-logo img {
+      height: 44px;
+      width: auto;
     }
 
     .header-logo-text {
@@ -313,6 +310,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+/* Tamanho grande da logo e texto, somente no desktop (PC) */
 @media (min-width: 1024px) {
   .header-logo-text span:first-child {
     font-size: 36px;
