@@ -1896,15 +1896,6 @@
       color: var(--cm-gray-500);
     }
 
-    .textarea-wrapper {
-      position: relative;
-    }
-
-    .textarea-wrapper .input-icon {
-      top: 14px;
-      align-self: flex-start;
-    }
-
     .form-group textarea {
       resize: vertical;
       min-height: 100px;
@@ -2384,70 +2375,11 @@
       .form-section-divider { font-size: 16px; }
     }
 
-    .form-group-wide .textarea-wrapper textarea {
-      min-height: 180px;
-    }
-
-    @media (min-width: 900px) {
-      .form-group-wide {
-        margin-left: -24px;
-        margin-right: -24px;
-      }
-    }
-
-    .form-row-exp {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
 @media (max-width: 767px) {
   #logo-mobile {
     width: 110px;
     height: auto;
   }
-}
-
-    .form-group-relato .textarea-wrapper textarea {
-      min-height: 180px;
-    }
-@media (min-width: 768px) {
-
-  .form-row-exp {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-.form-group-relato {
-  width: 330px;
-}
-
-.form-group-relato textarea {
-  width: 100%;
-  height: 100px;
-  padding: 15px;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
-}
-@media (max-width: 767px) {
-
-  .form-group-relato {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .form-group-relato .textarea-wrapper {
-    width: 100%;
-  }
-
-  .form-group-relato textarea {
-    width: 100%;
-    height: 120px;
-    min-height: 120px;
-    box-sizing: border-box;
-  }
-
 }
 
     .form-row-3,
@@ -3201,113 +3133,60 @@
       }
     }
 
+    /* ============================================
+       TEXTAREA "RELATAR EXPERIÊNCIA" - responsivo
+       (bloco único, sem !important, sem duplicatas)
+    ============================================ */
+    .textarea-wrapper {
+      position: relative;
+      width: 100%;
+    }
 
+    .textarea-wrapper .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 18px;
+      z-index: 2;
+      color: var(--cm-red);
+      font-size: 18px;
+    }
 
-.form-group-relato {
-    width: 330px !important;
-    flex: 0 0 330px !important;
-}
+    .textarea-wrapper textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px 15px 15px 45px;
+      resize: vertical;
+    }
 
-.form-group-relato textarea {
-    width: 330px !important;
-    height: 100px !important;
-    min-height: 100px !important;
-    max-height: 100px !important;
-    resize: none;
-    box-sizing: border-box;
-}
-.textarea-wrapper {
-    position: relative;
-    width: 100%;
-}
+    .form-group-relato {
+      width: 100%;
+      min-width: 0; /* evita overflow em containers flex/grid no mobile */
+      flex: 1 1 100%;
+    }
 
-.textarea-wrapper .input-icon {
-    position: absolute;
-    left: 15px;
-    top: 18px;
-    z-index: 2;
-    color: #c41230;
-    font-size: 18px;
-}
+    .form-group-relato textarea {
+      min-height: 140px;
+    }
 
-.textarea-wrapper textarea {
-    width: 100%;
-    height: 100px;
-    min-height: 100px;
-    padding-left: 45px;
-    padding-top: 15px;
-    box-sizing: border-box;
-    resize: vertical;
-}
+    @media (min-width: 768px) {
+      .form-group-relato textarea {
+        min-height: 160px;
+      }
+    }
 
+    @media (max-width: 767px) {
+      .form-row {
+        flex-direction: column;
+      }
 
-/* ===== AJUSTE RELATAR EXPERIÊNCIA ===== */
+      .form-card,
+      .professional-form {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+      }
 
-/* Desktop */
-@media (min-width: 768px) {
-
-  .form-row-exp {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .form-group-relato {
-    width: 330px;
-    max-width: 100%;
-  }
-
-  .form-group-relato .textarea-wrapper {
-    width: 100%;
-  }
-
-  .form-group-relato textarea {
-    width: 100%;
-    height: 100px;
-    min-height: 100px;
-    padding: 15px 15px 15px 45px;
-    box-sizing: border-box;
-    resize: vertical;
-  }
-
-}
-
-
-/* Mobile */
-@media (max-width: 767px) {
-
-  .form-row-exp {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .form-group-relato {
-    width: 90%;
-    max-width: 330px;
-    margin: 0 auto;
-  }
-
-  .form-group-relato .textarea-wrapper {
-    width: 100%;
-  }
-
-  .form-group-relato textarea {
-    width: 100%;
-    height: 120px;
-    min-height: 120px;
-    padding: 15px 15px 15px 45px;
-    box-sizing: border-box;
-    resize: vertical;
-  }
-
-
-  /* mantém o ícone alinhado */
-  .textarea-wrapper .input-icon {
-    position: absolute;
-    left: 15px;
-    top: 18px;
-  }
-
-}
+      .textarea-wrapper textarea {
+        font-size: 16px; /* evita zoom automático no iOS ao focar */
+      }
+    }
