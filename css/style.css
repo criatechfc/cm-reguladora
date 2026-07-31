@@ -3198,3 +3198,24 @@
     resize: none;
     box-sizing: border-box;
 }
+.textarea-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.textarea-wrapper i,
+.textarea-wrapper .icon {
+    position: absolute;
+    left: 15px;
+    top: 18px;
+    z-index: 2;
+    color: #c41230;
+    font-size: 18px;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    padding-left: 45px; /* espaço para o ícone */
+    padding-top: 15px;
+    box-sizing: border-box;
+}
