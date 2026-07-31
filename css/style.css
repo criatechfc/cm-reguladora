@@ -2410,30 +2410,25 @@
     .form-group-relato .textarea-wrapper textarea {
       min-height: 180px;
     }
-
 @media (min-width: 768px) {
+
   .form-row-exp {
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
   }
 
- .form-group-relato {
-  flex: 1 1 100%;
-  width: 100%;
-}
-
-.form-group-relato .textarea-wrapper {
-  width: 100%;
-}
-
-.form-group-relato textarea {
-  width: 100%;
-  min-height: 140px;
-  resize: vertical;
-}
-  .form-row-exp .form-group:not(.form-group-relato) {
-    flex: 0 0 220px;
+  .form-group-relato {
+    width: 100%;
   }
+
+  .form-group-relato textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
 }
 
 
