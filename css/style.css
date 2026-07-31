@@ -2400,6 +2400,12 @@
       flex-direction: column;
       gap: 16px;
     }
+@media (max-width: 767px) {
+  #logo-mobile {
+    width: 110px;
+    height: auto;
+  }
+}
 
     .form-group-relato .textarea-wrapper textarea {
       min-height: 180px;
