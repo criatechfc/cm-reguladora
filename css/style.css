@@ -2677,12 +2677,16 @@
     }
 
 .footer-brand img {
-  height: 90px;
-  margin-bottom: 16px;
+  height: 100px;
+  margin: 0 auto 16px;
+  display: block;
 }
 
 @media (min-width: 768px) {
-  .footer-brand img { height: 110px; margin-bottom: 20px; }
+  .footer-brand img {
+    height: 110px;
+    margin: 0 0 20px;
+  }
 }
 
     .footer-brand p {
