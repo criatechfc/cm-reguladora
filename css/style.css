@@ -2417,11 +2417,20 @@
     align-items: flex-start;
   }
 
-  .form-group-relato {
-    flex: 1;
-    width: 100%;
-  }
+ .form-group-relato {
+  flex: 1 1 100%;
+  width: 100%;
+}
 
+.form-group-relato .textarea-wrapper {
+  width: 100%;
+}
+
+.form-group-relato textarea {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+}
   .form-row-exp .form-group:not(.form-group-relato) {
     flex: 0 0 220px;
   }
