@@ -2396,7 +2396,9 @@
     }
 
     .form-row-exp {
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
     .form-group-relato .textarea-wrapper textarea {
@@ -2405,7 +2407,16 @@
 
     @media (min-width: 768px) {
       .form-row-exp {
-        grid-template-columns: 4fr 1fr;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .form-group-relato {
+        width: 80%;
+      }
+
+      .form-row-exp .form-group:not(.form-group-relato) {
+        flex: 1;
       }
     }
 
