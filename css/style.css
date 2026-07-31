@@ -2433,7 +2433,8 @@
 @media (max-width: 767px) {
 
   .form-group-relato {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .form-group-relato .textarea-wrapper {
@@ -2442,8 +2443,8 @@
 
   .form-group-relato textarea {
     width: 100%;
-    min-height: 120px;
     height: 120px;
+    min-height: 120px;
     box-sizing: border-box;
   }
 
