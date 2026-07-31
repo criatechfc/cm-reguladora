@@ -276,7 +276,7 @@
 
     /* Tamanho normal da logo no mobile e tablet */
     .header-logo img {
-      height: 75px;
+      height: 44px;
       width: auto;
     }
 
@@ -2416,7 +2416,8 @@
       }
 
       .form-row-exp .form-group:not(.form-group-relato) {
-        flex: 1;
+        flex: 0 0 auto;
+        width: 220px;
       }
     }
 
