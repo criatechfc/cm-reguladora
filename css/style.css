@@ -3203,8 +3203,7 @@
     width: 100%;
 }
 
-.textarea-wrapper i,
-.textarea-wrapper .icon {
+.textarea-wrapper .input-icon {
     position: absolute;
     left: 15px;
     top: 18px;
@@ -3215,7 +3214,10 @@
 
 .textarea-wrapper textarea {
     width: 100%;
-    padding-left: 45px; /* espaço para o ícone */
+    height: 100px;
+    min-height: 100px;
+    padding-left: 45px;
     padding-top: 15px;
     box-sizing: border-box;
+    resize: vertical;
 }
