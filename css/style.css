@@ -2676,14 +2676,14 @@
       }
     }
 
-    .footer-brand img {
-      height: 44px;
-      margin-bottom: 12px;
-    }
+.footer-brand img {
+  height: 90px;
+  margin-bottom: 16px;
+}
 
-    @media (min-width: 768px) {
-      .footer-brand img { height: 50px; margin-bottom: 16px; }
-    }
+@media (min-width: 768px) {
+  .footer-brand img { height: 110px; margin-bottom: 20px; }
+}
 
     .footer-brand p {
       font-size: 12px;
