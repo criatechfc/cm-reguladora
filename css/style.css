@@ -2428,7 +2428,7 @@
 
 .form-group-relato textarea {
   width: 100%;
-  min-height: 180px;
+  min-height: 140px;
   resize: vertical;
 }
   .form-row-exp .form-group:not(.form-group-relato) {
