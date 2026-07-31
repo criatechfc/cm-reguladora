@@ -210,7 +210,7 @@
 
         <h3 class="form-section-divider"><i class="fas fa-university"></i> Dados Bancários</h3>
 
-        <div class="form-row form-row-4">
+        <div class="form-row form-row-3">
           <div class="form-group">
             <label for="vBanco">Banco *</label>
             <div class="input-wrapper">
@@ -228,37 +228,38 @@
             <span class="form-error"></span>
           </div>
           <div class="form-group">
-            <label for="vCC">C/C</label>
+            <label for="vTitular">Titular da Conta *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-user-check input-icon"></i>
+              <input type="text" id="vTitular" name="titular_conta" placeholder="Nome do titular" required />
+            </div>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row form-row-3">
+          <div class="form-group">
+            <label for="vCC">C/C (Conta Corrente)</label>
             <div class="input-wrapper">
               <i class="fas fa-wallet input-icon"></i>
               <input type="text" id="vCC" name="conta_corrente" placeholder="00000-0" />
             </div>
           </div>
           <div class="form-group">
-            <label for="vCP">C/P</label>
+            <label for="vCP">C/P (Conta Poupança)</label>
             <div class="input-wrapper">
               <i class="fas fa-piggy-bank input-icon"></i>
               <input type="text" id="vCP" name="conta_poupanca" placeholder="00000-0" />
             </div>
           </div>
-        </div>
-
-        <div class="form-group">
-          <label for="vTitular">Titular da Conta *</label>
-          <div class="input-wrapper">
-            <i class="fas fa-user-check input-icon"></i>
-            <input type="text" id="vTitular" name="titular_conta" placeholder="Nome do titular" required />
+          <div class="form-group">
+            <label for="vPix">PIX *</label>
+            <div class="input-wrapper">
+              <i class="fas fa-qrcode input-icon"></i>
+              <input type="text" id="vPix" name="pix" placeholder="Chave PIX" required />
+            </div>
+            <span class="form-error"></span>
           </div>
-          <span class="form-error"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="vPix">PIX *</label>
-          <div class="input-wrapper">
-            <i class="fas fa-qrcode input-icon"></i>
-            <input type="text" id="vPix" name="pix" placeholder="Chave PIX" required />
-          </div>
-          <span class="form-error"></span>
         </div>
 
         <div class="form-group">
@@ -270,11 +271,11 @@
           <span class="form-error"></span>
         </div>
 
-        <div class="form-group">
+        <div class="form-group form-group-wide">
           <label for="vRelatoExp">Relatar Experiência *</label>
           <div class="input-wrapper textarea-wrapper">
             <i class="fas fa-comment-alt input-icon"></i>
-            <textarea id="vRelatoExp" name="relato_experiencia" rows="4" placeholder="Conte um pouco sobre sua experiência como vistoriador..." required></textarea>
+            <textarea id="vRelatoExp" name="relato_experiencia" rows="7" placeholder="Conte um pouco sobre sua experiência como vistoriador..." required></textarea>
           </div>
           <span class="form-error"></span>
         </div>
