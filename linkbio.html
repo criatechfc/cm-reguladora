@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CM Reguladora de Sinistros - Links</title>
+  <link rel="icon" type="image/jpeg" href="images/cm-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --cm-dark: #0d1b2a;
+      --cm-gold: #c9a227;
+      --cm-white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--cm-white);
+      overflow-x: hidden;
+    }
+
+    /* Background animado estilo "Ken Burns" (movimento lento tipo vídeo) */
+    .bg-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .bg-wrap img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%) scale(1.15);
+      object-fit: cover;
+      animation: kenburns 22s ease-in-out infinite alternate;
+      filter: brightness(0.65);
+    }
+
+    @keyframes kenburns {
+      0% {
+        transform: translate(-52%, -50%) scale(1.15);
+      }
+      50% {
+        transform: translate(-48%, -52%) scale(1.25);
+      }
+      100% {
+        transform: translate(-50%, -48%) scale(1.18);
+      }
+    }
+
+    /* Sombra escura sobreposta */
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg,
+        rgba(5, 10, 18, 0.75) 0%,
+        rgba(5, 10, 18, 0.55) 40%,
+        rgba(5, 10, 18, 0.85) 100%);
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 48px 20px 40px;
+    }
+
+    .logo-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+      background: var(--cm-white);
+      animation: fadeInDown 0.8s ease both;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1.brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 0.5px;
+      text-align: center;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      animation: fadeInDown 0.9s ease both;
+    }
+
+    p.brand-tag {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 36px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      animation: fadeInDown 1s ease both;
+    }
+
+    .links {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 14px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: var(--cm-white);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .link-btn i.icon-left {
+      font-size: 20px;
+      width: 26px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .link-btn span {
+      flex: 1;
+      text-align: left;
+    }
+
+    .link-btn i.icon-right {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    .link-btn.whatsapp i.icon-left { color: #25D366; }
+    .link-btn.site i.icon-left { color: var(--cm-gold); }
+    .link-btn.instagram i.icon-left { color: #E1306C; }
+    .link-btn.linkedin i.icon-left { color: #0A66C2; }
+    .link-btn.facebook i.icon-left { color: #1877F2; }
+
+    .links .link-btn:nth-child(1) { animation-delay: 0.15s; }
+    .links .link-btn:nth-child(2) { animation-delay: 0.3s; }
+    .links .link-btn:nth-child(3) { animation-delay: 0.45s; }
+    .links .link-btn:nth-child(4) { animation-delay: 0.6s; }
+    .links .link-btn:nth-child(5) { animation-delay: 0.75s; }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      animation: fadeIn 1.5s ease both;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .logo-wrap { width: 100px; height: 100px; }
+      h1.brand-name { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-wrap">
+    <img src="images/WhatsApp%20Image%202026-07-30%20at%2012.06.47.jpeg" alt="CM Reguladora" />
+  </div>
+  <div class="bg-overlay"></div>
+
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="images/cm-logo.jpg" alt="CM Reguladora de Sinistros" />
+    </div>
+
+    <h1 class="brand-name">CM Reguladora de Sinistros</h1>
+    <p class="brand-tag">Acesse nossos canais</p>
+
+    <div class="links">
+      <a class="link-btn whatsapp" href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp icon-left"></i>
+        <span>WhatsApp</span>
+        <i class="fas fa-arrow-up-right-from-square icon-right"></i>
+      </a>
+
+      <a class="link-btn site" href="https://cmreguladora.com.br/" target="_blank" rel="noopener">
+        <i class="fas fa-globe icon-left"></i>
+        <span>Site Oficial</span>
+        <i class="fas fa-arrow-up-right-from-square icon-right"></i>
+      </a>
+
+      <a class="link-btn instagram" href="https://www.instagram.com/cmreguladora?igsh=MWE0a2thbWszbGxuZQ%3D%3D" target="_blank" rel="noopener">
+        <i class="fab fa-instagram icon-left"></i>
+        <span>Instagram</span>
+        <i class="fas fa-arrow-up-right-from-square icon-right"></i>
+      </a>
+
+      <a class="link-btn linkedin" href="https://www.linkedin.com/in/cm-reguladora-de-sinistros-137436426?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin icon-left"></i>
+        <span>LinkedIn</span>
+        <i class="fas fa-arrow-up-right-from-square icon-right"></i>
+      </a>
+
+      <a class="link-btn facebook" href="#" onclick="return false;">
+        <i class="fab fa-facebook icon-left"></i>
+        <span>Facebook</span>
+      </a>
+    </div>
+
+    <footer>&copy; 2026 CM Reguladora de Sinistros</footer>
+  </div>
+
+</body>
+</html>
