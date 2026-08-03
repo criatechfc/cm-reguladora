@@ -901,10 +901,6 @@
       font-size: 13px;
     }
 
-    @media (min-width: 640px) {
-      .hero-info { justify-content: flex-start; }
-    }
-
     @media (min-width: 480px) {
       .hero-info { font-size: 14px; }
     }
@@ -949,11 +945,7 @@
       animation: bounce 2s infinite;
     }
 
-    @media (min-width: 640px) {
-      .hero-scroll-indicator {
-        align-items: flex-start;
-      }
-    }
+
 
     .scroll-mouse {
       width: 24px;
