@@ -488,21 +488,25 @@ e faça parte de uma empresa que valoriza a excelência, qualidade, agilidade, t
       successBox.innerHTML = '<i class="fas fa-spinner fa-spin"></i><p>Enviando seu cadastro, aguarde um instante...</p>';
 
       const formData = new FormData(form);
+      const AJAX_ENDPOINT = 'https://formsubmit.co/ajax/cmreguladora@gmail.com';
 
-      fetch(form.action, {
+      fetch(AJAX_ENDPOINT, {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
       })
-        .then(res => {
-          if (!res.ok) throw new Error('Falha no envio');
-          return res.json();
+        .then(async res => {
+          const text = await res.text();
+          console.log('[FormSubmit] status:', res.status, 'resposta:', text);
+          if (!res.ok) throw new Error('HTTP ' + res.status + ' - ' + text);
+          return text;
         })
         .then(() => {
           form.style.display = 'none';
           successBox.innerHTML = '<i class="fas fa-check-circle"></i><p>Cadastro enviado com sucesso! Nossa equipe entrará em contato em breve.</p>';
         })
-        .catch(() => {
+        .catch(err => {
+          console.error('[FormSubmit] erro no envio:', err);
           successBox.innerHTML = '<i class="fas fa-exclamation-circle"></i><p>Não foi possível enviar. Verifique sua conexão e tente novamente, ou envie os dados pelo WhatsApp.</p>';
           btn.disabled = false;
           btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Cadastro';
