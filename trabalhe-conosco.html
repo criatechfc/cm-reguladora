@@ -502,7 +502,11 @@ e faça parte de uma empresa que valoriza a excelência, qualidade, agilidade, t
           return text;
         })
         .then(() => {
+          // move a caixa de sucesso para FORA do form antes de esconder o form,
+          // senão ela some junto (por estar aninhada dentro do <form>)
+          form.parentNode.insertBefore(successBox, form.nextSibling);
           form.style.display = 'none';
+          successBox.style.display = 'flex';
           successBox.innerHTML = '<i class="fas fa-check-circle"></i><p>Cadastro enviado com sucesso! Nossa equipe entrará em contato em breve.</p>';
         })
         .catch(err => {
