@@ -507,7 +507,7 @@ e faça parte de uma empresa que valoriza a excelência, qualidade, agilidade, t
           form.parentNode.insertBefore(successBox, form.nextSibling);
           form.style.display = 'none';
           successBox.style.display = 'flex';
-          successBox.innerHTML = '<i class="fas fa-check-circle"></i><p>Cadastro enviado com sucesso! Nossa equipe entrará em contato em breve.</p>';
+          successBox.innerHTML = '<i class="fas fa-check-circle"></i><p>Cadastro enviado com sucesso!<br>Nossa equipe verificará seus dados e informações.</p>';
         })
         .catch(err => {
           console.error('[FormSubmit] erro no envio:', err);
