@@ -37,94 +37,7 @@
       mobileOverlay.classList.remove('active');
       document.body.style.overflow = '';
     }
-// === Formulário "Trabalhe Conosco" (Cadastro de Vistoriador) ===
-const vistoriadorForm = document.getElementById('vistoriadorForm');
-const vistoriadorFormSuccess = document.getElementById('vistoriadorFormSuccess');
-const vistoriadorSubmitBtn = document.getElementById('vistoriadorSubmitBtn');
-
-if (vistoriadorForm) {
-  vistoriadorForm.addEventListener('submit', function(e) {
-    let isValid = true;
-    const requiredFields = vistoriadorForm.querySelectorAll('[required]');
-
-    requiredFields.forEach(field => {
-      const formGroup = field.closest('.form-group');
-      if (!formGroup) return;
-      const errorSpan = formGroup.querySelector('.form-error');
-
-      if (field.type === 'radio') {
-        const groupName = field.name;
-        const checked = vistoriadorForm.querySelector(`input[name="${groupName}"]:checked`);
-        if (!checked) {
-          isValid = false;
-          formGroup.classList.add('error');
-          if (errorSpan) errorSpan.textContent = 'Selecione uma opção';
-        } else {
-          formGroup.classList.remove('error');
-          if (errorSpan) errorSpan.textContent = '';
-        }
-        return;
-      }
-
-      if (field.type === 'file') {
-        if (!field.value) {
-          isValid = false;
-          formGroup.classList.add('error');
-          if (errorSpan) errorSpan.textContent = 'Anexe o arquivo';
-        } else {
-          formGroup.classList.remove('error');
-          if (errorSpan) errorSpan.textContent = '';
-        }
-        return;
-      }
-
-      if (!field.value.trim()) {
-        isValid = false;
-        formGroup.classList.add('error');
-        if (errorSpan) errorSpan.textContent = 'Este campo é obrigatório';
-      } else {
-        formGroup.classList.remove('error');
-        if (errorSpan) errorSpan.textContent = '';
-      }
-    });
-
-    if (!isValid) {
-      e.preventDefault();
-      const firstError = vistoriadorForm.querySelector('.form-group.error');
-      if (firstError) {
-        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      return;
-    }
-
-    // Formulário válido: deixa o envio nativo acontecer (POST para o FormSubmit)
-    if (vistoriadorSubmitBtn) {
-      vistoriadorSubmitBtn.disabled = true;
-      vistoriadorSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-    }
-    if (vistoriadorFormSuccess) {
-      vistoriadorFormSuccess.classList.add('show');
-    }
-  });
-
-  // Limpar erro ao preencher/selecionar
-  const vInputs = vistoriadorForm.querySelectorAll('input, textarea, select');
-  vInputs.forEach(input => {
-    input.addEventListener('input', function() {
-      const formGroup = this.closest('.form-group');
-      if (!formGroup) return;
-      if (this.type === 'file' ? this.value : this.value.trim()) {
-        formGroup.classList.remove('error');
-      }
-    });
-    if (input.type === 'radio') {
-      input.addEventListener('change', function() {
-        const formGroup = this.closest('.form-group');
-        if (formGroup) formGroup.classList.remove('error');
-      });
-    }
-  });
-}
+// O cadastro de vistoriador é validado e enviado pelo script do HTML corrigido.
 
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -238,6 +151,7 @@ document.addEventListener('keydown', (e) => {
     const track = document.getElementById('testimonialsTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    if (track && prevBtn && nextBtn) {
     let currentSlide = 0;
     let slidesPerView = 1;
 
@@ -285,6 +199,8 @@ document.addEventListener('keydown', (e) => {
       }
       updateSlider();
     }, 5000);
+
+    }
 
     // === Bases Gallery Slider (Conheça Nossas Bases) ===
     const basesTrack = document.getElementById('basesTrack');
