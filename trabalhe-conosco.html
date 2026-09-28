@@ -178,7 +178,7 @@
         />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="obrigado.html" />
+        <input type="hidden" name="_next" value="https://cmreguladora.com.br/obrigado.html" />
         <input
           type="text"
           name="_honey"
@@ -852,112 +852,64 @@
   <!-- Use aqui o script.js corrigido -->
   <script src="js/script.js"></script>
 
-  <!-- Validação e envio do cadastro -->
+  <!-- Validação do cadastro. O envio é feito de forma nativa pelo FormSubmit
+       para garantir o suporte aos anexos multipart/form-data. -->
   <script>
     (() => {
       const form = document.getElementById('vistoriadorForm');
       const btn = document.getElementById('vistoriadorSubmitBtn');
       const successBox = document.getElementById('vistoriadorFormSuccess');
+      const MAX_TOTAL_BYTES = 10 * 1024 * 1024; // limite total do FormSubmit: 10 MB
 
-      let enviando = false;
-
-      form.addEventListener('submit', async function (event) {
-        event.preventDefault();
-
-        if (enviando) return;
-
+      form.addEventListener('submit', function (event) {
         // Impede que espaços em branco sejam considerados preenchimento.
         form.querySelectorAll('input[required], textarea[required]').forEach(field => {
           const tiposTexto = ['text', 'tel', 'email', 'search', 'url', 'textarea'];
-
           if (tiposTexto.includes(field.type)) {
             field.value = field.value.trim();
           }
         });
 
-        // Verifica campos obrigatórios, seleções, anexos e limites numéricos.
         if (!form.reportValidity()) {
+          event.preventDefault();
           successBox.style.display = 'none';
           return;
         }
 
-        enviando = true;
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        const arquivos = [
+          document.getElementById('vCNH')?.files?.[0],
+          document.getElementById('vCRLV')?.files?.[0],
+          document.getElementById('vComprovante')?.files?.[0]
+        ].filter(Boolean);
 
-        successBox.style.display = 'flex';
-        successBox.innerHTML =
-          '<i class="fas fa-spinner fa-spin"></i>' +
-          '<p>Enviando seu cadastro, aguarde um instante...</p>';
+        const tamanhoTotal = arquivos.reduce((total, arquivo) => total + arquivo.size, 0);
 
-        try {
-          const vagaEscolhida = form.querySelector('#vCargo').value;
-          const vagaEscolhida2 = form.querySelector('#vCargo2').value;
-          const subjectField = form.querySelector('input[name="_subject"]');
-
-          let assunto = 'Novo Cadastro - ' + vagaEscolhida;
-
-          if (vagaEscolhida2) {
-            assunto += ' / ' + vagaEscolhida2;
-          }
-
-          subjectField.value = assunto;
-
-          const formData = new FormData(form);
-
-          const resposta = await fetch(
-            'https://formsubmit.co/ajax/cmreguladora@gmail.com',
-            {
-              method: 'POST',
-              body: formData,
-              headers: {
-                'Accept': 'application/json'
-              }
-            }
-          );
-
-          if (!resposta.ok) {
-            throw new Error('HTTP ' + resposta.status);
-          }
-
-          const resultado = await resposta.json();
-
-          // Só mostra sucesso quando o serviço confirma o envio.
-          if (
-            resultado.success !== true &&
-            resultado.success !== 'true'
-          ) {
-            throw new Error('O serviço não confirmou o envio.');
-          }
-
-          // Mantém a mensagem visível ao esconder o formulário.
-          form.parentNode.insertBefore(successBox, form.nextSibling);
-
-          form.style.display = 'none';
-          successBox.style.display = 'flex';
-          successBox.innerHTML =
-            '<i class="fas fa-check-circle"></i>' +
-            '<p>Cadastro enviado com sucesso!<br>' +
-            'Nossa equipe verificará seus dados e informações.</p>';
-
-          successBox.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-          });
-        } catch (erro) {
-          console.error('[FormSubmit] Erro no envio:', erro);
-
+        if (tamanhoTotal > MAX_TOTAL_BYTES) {
+          event.preventDefault();
           successBox.style.display = 'flex';
           successBox.innerHTML =
             '<i class="fas fa-exclamation-circle"></i>' +
-            '<p>Não foi possível enviar. Verifique sua conexão e tente novamente, ' +
-            'ou envie os dados pelo WhatsApp.</p>';
-
-          enviando = false;
-          btn.disabled = false;
-          btn.innerHTML =
-            '<i class="fas fa-paper-plane"></i> Enviar Cadastro';
+            '<p>Os anexos somam mais de 10 MB. Reduza o tamanho dos arquivos e tente novamente.</p>';
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
         }
+
+        const vagaEscolhida = form.querySelector('#vCargo').value;
+        const vagaEscolhida2 = form.querySelector('#vCargo2').value;
+        const subjectField = form.querySelector('input[name="_subject"]');
+
+        let assunto = 'Novo Cadastro - ' + vagaEscolhida;
+        if (vagaEscolhida2) assunto += ' / ' + vagaEscolhida2;
+        subjectField.value = assunto;
+
+        // Não use preventDefault/fetch aqui. O POST nativo com multipart/form-data
+        // é o fluxo documentado pelo FormSubmit para anexos.
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        successBox.style.display = 'flex';
+        successBox.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i>' +
+          '<p>Enviando seu cadastro e documentos...</p>';
       });
     })();
   </script>
