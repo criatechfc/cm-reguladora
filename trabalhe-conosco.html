@@ -33,26 +33,6 @@
       transition: none !important;
     }
 
-    .email-alternativo {
-      margin-top: 24px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-    }
-
-    .email-alternativo p {
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-
-    .email-alternativo button {
-      margin-bottom: 12px;
-    }
-
-    .email-alternativo a {
-      overflow-wrap: anywhere;
-    }
-
     .aviso-anexos {
       margin-bottom: 16px;
       line-height: 1.6;
@@ -67,6 +47,22 @@
     #vistoriadorSubmitBtn:disabled {
       opacity: 0.7;
       cursor: wait;
+    }
+
+    #vistoriadorFormSuccess.success {
+      display: block !important;
+      background: #e8f8ee;
+      color: #176b36;
+      border-left: 4px solid #1fa855;
+      border-radius: 8px;
+    }
+
+    #vistoriadorFormSuccess.error {
+      display: block !important;
+      background: #fff0f2;
+      color: #9d1028;
+      border-left: 4px solid #C41230;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -233,7 +229,7 @@
         <form
           class="professional-form form-card animate-on-scroll"
           id="vistoriadorForm"
-          action="https://formsubmit.co/cmreguladora@gmail.com"
+          action="https://forminit.com/f/nsze7atqvdj"
           method="POST"
           enctype="multipart/form-data"
         >
@@ -265,7 +261,7 @@
             <label for="vCargo">Oportunidade Pretendida *</label>
             <div class="input-wrapper select-wrapper">
               <i class="fas fa-user-tie input-icon"></i>
-              <select id="vCargo" name="vaga_pretendida" required>
+              <select id="vCargo" name="fi-select-oportunidade_pretendida" required>
                 <option value="" disabled selected>
                   Selecione a área de interesse
                 </option>
@@ -295,7 +291,7 @@
             </label>
             <div class="input-wrapper select-wrapper">
               <i class="fas fa-user-tie input-icon"></i>
-              <select id="vCargo2" name="segunda_vaga_pretendida">
+              <select id="vCargo2" name="fi-select-segunda_oportunidade">
                 <option value="" selected>
                   Nenhuma / Selecione se desejar
                 </option>
@@ -331,7 +327,7 @@
                 <input
                   type="text"
                   id="vNome"
-                  name="nome"
+                  name="fi-sender-fullName"
                   placeholder="Seu nome completo"
                   autocomplete="name"
                   required
@@ -347,7 +343,7 @@
                 <input
                   type="date"
                   id="vNascimento"
-                  name="data_nascimento"
+                  name="fi-date-data_nascimento"
                   required
                 >
               </div>
@@ -363,7 +359,7 @@
                 <input
                   type="text"
                   id="vCPF"
-                  name="cpf"
+                  name="fi-text-cpf"
                   placeholder="000.000.000-00"
                   required
                 >
@@ -378,7 +374,7 @@
                 <input
                   type="text"
                   id="vRG"
-                  name="rg"
+                  name="fi-text-rg"
                   placeholder="00.000.000-0"
                   required
                 >
@@ -394,7 +390,7 @@
               <input
                 type="text"
                 id="vEndereco"
-                name="endereco"
+                name="fi-text-endereco"
                 placeholder="Rua, número, bairro"
                 required
               >
@@ -410,7 +406,7 @@
                 <input
                   type="text"
                   id="vCidade"
-                  name="cidade"
+                  name="fi-text-cidade"
                   placeholder="Sua cidade"
                   required
                 >
@@ -422,7 +418,7 @@
               <label for="vUF">UF *</label>
               <div class="input-wrapper select-wrapper">
                 <i class="fas fa-map input-icon"></i>
-                <select id="vUF" name="uf" required>
+                <select id="vUF" name="fi-select-uf" required>
                   <option value="" disabled selected>UF</option>
                   <option>AC</option>
                   <option>AL</option>
@@ -463,7 +459,7 @@
                 <input
                   type="text"
                   id="vCEP"
-                  name="cep"
+                  name="fi-text-cep"
                   placeholder="00000-000"
                   required
                 >
@@ -480,7 +476,7 @@
                 <input
                   type="tel"
                   id="vCelular"
-                  name="tel_celular"
+                  name="fi-text-telefone_celular"
                   placeholder="(00) 00000-0000"
                   required
                 >
@@ -495,7 +491,7 @@
                 <input
                   type="tel"
                   id="vRecado"
-                  name="tel_recado"
+                  name="fi-text-telefone_recado"
                   placeholder="(00) 0000-0000"
                 >
               </div>
@@ -514,7 +510,7 @@
                 <input
                   type="text"
                   id="vBanco"
-                  name="banco"
+                  name="fi-text-banco"
                   placeholder="Nome do banco"
                   required
                 >
@@ -529,7 +525,7 @@
                 <input
                   type="text"
                   id="vAgencia"
-                  name="agencia"
+                  name="fi-text-agencia"
                   placeholder="0000"
                   required
                 >
@@ -544,7 +540,7 @@
                 <input
                   type="text"
                   id="vTitular"
-                  name="titular_conta"
+                  name="fi-text-titular_conta"
                   placeholder="Nome do titular"
                   required
                 >
@@ -561,7 +557,7 @@
                 <input
                   type="text"
                   id="vCC"
-                  name="conta_corrente"
+                  name="fi-text-conta_corrente"
                   placeholder="00000-0"
                 >
               </div>
@@ -574,7 +570,7 @@
                 <input
                   type="text"
                   id="vCP"
-                  name="conta_poupanca"
+                  name="fi-text-conta_poupanca"
                   placeholder="00000-0"
                 >
               </div>
@@ -587,7 +583,7 @@
                 <input
                   type="text"
                   id="vPix"
-                  name="pix"
+                  name="fi-text-pix"
                   placeholder="Chave PIX"
                   required
                 >
@@ -604,7 +600,7 @@
                 <input
                   type="text"
                   id="vTempoExp"
-                  name="tempo_experiencia"
+                  name="fi-text-tempo_experiencia"
                   placeholder="Ex: 5 anos"
                   required
                 >
@@ -618,7 +614,7 @@
                 <i class="fas fa-comment-alt input-icon"></i>
                 <textarea
                   id="vRelatoExp"
-                  name="relato_experiencia"
+                  name="fi-text-relato_experiencia"
                   rows="7"
                   placeholder="Conte um pouco sobre sua experiência profissional..."
                   required
@@ -640,7 +636,7 @@
                 <input
                   type="text"
                   id="vMarca"
-                  name="veiculo_marca"
+                  name="fi-text-veiculo_marca"
                   placeholder="Ex: Volkswagen"
                   required
                 >
@@ -655,7 +651,7 @@
                 <input
                   type="text"
                   id="vModelo"
-                  name="veiculo_modelo"
+                  name="fi-text-veiculo_modelo"
                   placeholder="Ex: Gol"
                   required
                 >
@@ -672,7 +668,7 @@
                 <input
                   type="number"
                   id="vAno"
-                  name="veiculo_ano"
+                  name="fi-number-veiculo_ano"
                   placeholder="0000"
                   min="1970"
                   max="2026"
@@ -689,7 +685,7 @@
                 <input
                   type="text"
                   id="vPlaca"
-                  name="veiculo_placa"
+                  name="fi-text-veiculo_placa"
                   placeholder="ABC-0000"
                   required
                 >
@@ -705,7 +701,7 @@
                 <label class="radio-option">
                   <input
                     type="radio"
-                    name="possui_seguro"
+                    name="fi-radio-possui_seguro"
                     value="Sim"
                     required
                   >
@@ -715,7 +711,7 @@
                 <label class="radio-option">
                   <input
                     type="radio"
-                    name="possui_seguro"
+                    name="fi-radio-possui_seguro"
                     value="Não"
                     required
                   >
@@ -732,7 +728,7 @@
                 <input
                   type="text"
                   id="vSeguradora"
-                  name="seguradora"
+                  name="fi-text-seguradora"
                   placeholder="Nome da seguradora"
                 >
               </div>
@@ -754,7 +750,7 @@
               <input
                 type="file"
                 id="vCNH"
-                name="anexo_cnh"
+                name="fi-file-cnh"
                 accept=".pdf,.jpg,.jpeg,.png"
                 required
               >
@@ -766,7 +762,7 @@
               <input
                 type="file"
                 id="vCRLV"
-                name="anexo_crlv"
+                name="fi-file-crlv"
                 accept=".pdf,.jpg,.jpeg,.png"
                 required
               >
@@ -781,7 +777,7 @@
             <input
               type="file"
               id="vComprovante"
-              name="anexo_comprovante_endereco"
+              name="fi-file-comprovante_endereco"
               accept=".pdf,.jpg,.jpeg,.png"
               required
             >
@@ -804,35 +800,7 @@
             role="status"
             aria-live="polite"
           ></div>
-
-          <div class="email-alternativo">
-            <p><strong>Problemas para enviar o cadastro?</strong></p>
-            <p>
-              Abra seu aplicativo de e-mail com os dados preenchidos.
-              Anexe manualmente a CNH, o CRLV e o comprovante de endereço
-              antes de enviar. Os arquivos selecionados acima não são
-              transferidos automaticamente para o e-mail.
-            </p>
-
-            <button
-              type="button"
-              id="emailAlternativo"
-              class="btn-primary"
-            >
-              <i class="fas fa-envelope"></i>
-              Abrir cadastro no e-mail
-            </button>
-
-            <p id="emailAlternativoStatus" role="status"></p>
-
-            <p>
-              Destinatário:
-              <a href="mailto:cmreguladora@gmail.com">
-                cmreguladora@gmail.com
-              </a>
-            </p>
-          </div>
-        </form>
+</form>
       </div>
     </section>
   </main>
@@ -988,7 +956,138 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- Toda a lógica fica neste arquivo. -->
+  <!-- Forminit: envio do Trabalhe Conosco -->
+  <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
+  <script>
+    (function () {
+      const FORM_ID = 'nsze7atqvdj';
+      const LIMITE_ANEXOS = 9 * 1000 * 1000;
+
+      const form = document.getElementById('vistoriadorForm');
+      const botao = document.getElementById('vistoriadorSubmitBtn');
+      const status = document.getElementById('vistoriadorFormSuccess');
+
+      if (!form || !botao || !status) return;
+
+      const textoOriginal = botao.innerHTML;
+
+      function mostrarStatus(mensagem, tipo) {
+        status.textContent = mensagem;
+        status.classList.remove('success', 'error');
+        status.classList.add(tipo);
+        status.style.display = 'block';
+      }
+
+      function restaurarBotao() {
+        botao.disabled = false;
+        botao.innerHTML = textoOriginal;
+      }
+
+      form.addEventListener('submit', async function (event) {
+        // Captura o submit antes da rotina antiga de script.js.
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        status.style.display = 'none';
+        status.classList.remove('success', 'error');
+
+        form.querySelectorAll('input[type="text"], input[type="tel"], textarea')
+          .forEach(function (campo) {
+            campo.value = campo.value.trim();
+          });
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        const arquivos = Array.from(
+          form.querySelectorAll('input[type="file"]')
+        ).flatMap(function (campo) {
+          return Array.from(campo.files || []);
+        });
+
+        const tamanhoTotal = arquivos.reduce(function (total, arquivo) {
+          return total + arquivo.size;
+        }, 0);
+
+        if (tamanhoTotal > LIMITE_ANEXOS) {
+          mostrarStatus(
+            'Os três documentos juntos ultrapassam 9 MB. Reduza o tamanho dos arquivos e tente novamente.',
+            'error'
+          );
+          status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        const arquivoInvalido = arquivos.find(function (arquivo) {
+          return !/\.(pdf|jpe?g|png)$/i.test(arquivo.name);
+        });
+
+        if (arquivoInvalido) {
+          mostrarStatus(
+            'Envie os documentos somente em PDF, JPG, JPEG ou PNG.',
+            'error'
+          );
+          status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        if (typeof Forminit === 'undefined') {
+          mostrarStatus(
+            'Não foi possível carregar o serviço de envio. Verifique sua conexão e tente novamente.',
+            'error'
+          );
+          return;
+        }
+
+        botao.disabled = true;
+        botao.textContent = 'Enviando cadastro...';
+
+        mostrarStatus(
+          'Enviando seus dados e documentos com segurança...',
+          'success'
+        );
+
+        try {
+          const forminit = new Forminit();
+          const formData = new FormData(form);
+
+          const resposta = await forminit.submit(FORM_ID, formData);
+          const error = resposta && resposta.error;
+
+          if (error) {
+            throw new Error(error.message || 'Falha ao enviar o cadastro.');
+          }
+
+          form.reset();
+
+          mostrarStatus(
+            'Cadastro enviado com sucesso! Redirecionando...',
+            'success'
+          );
+
+          setTimeout(function () {
+            window.location.href = 'obrigado.html';
+          }, 700);
+
+        } catch (erro) {
+          console.error('Erro Forminit:', erro);
+
+          mostrarStatus(
+            'Não foi possível enviar o cadastro. ' +
+            (erro && erro.message ? erro.message : 'Tente novamente em instantes.'),
+            'error'
+          );
+
+          restaurarBotao();
+          status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, true);
+    })();
+  </script>
+
+  <!-- Demais recursos do site -->
   <script src="js/script.js" defer></script>
 </body>
 </html>
