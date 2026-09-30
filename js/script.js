@@ -1,479 +1,760 @@
 /* ============================================
-       CM REGULADORA - JAVASCRIPT
-    ============================================ */
+   CM REGULADORA — JAVASCRIPT
+   ============================================ */
 
-    // === Header Scroll Effect ===
-    const header = document.getElementById('header');
-    const backToTop = document.getElementById('backToTop');
+(() => {
+  'use strict';
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+  function iniciar() {
+    const porId = id => document.getElementById(id);
 
-      if (window.scrollY > 400) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
+    // ========================================
+    // HEADER E VOLTAR AO TOPO
+    // ========================================
 
-    backToTop.addEventListener('click', () => {
+    const header = porId('header');
+    const backToTop = porId('backToTop');
+
+    function atualizarScroll() {
+      header?.classList.toggle('scrolled', window.scrollY > 50);
+      backToTop?.classList.toggle('visible', window.scrollY > 400);
+    }
+
+    window.addEventListener('scroll', atualizarScroll, { passive: true });
+    atualizarScroll();
+
+    backToTop?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // === Mobile Menu ===
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const mobileClose = document.getElementById('mobileClose');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+    // ========================================
+    // MENU MOBILE
+    // ========================================
 
-    function closeMobileMenu() {
-      hamburger.classList.remove('active');
-      mobileMenu.classList.remove('active');
-      mobileOverlay.classList.remove('active');
+    const hamburger = porId('hamburger');
+    const mobileMenu = porId('mobileMenu');
+    const mobileOverlay = porId('mobileOverlay');
+    const mobileClose = porId('mobileClose');
+
+    function fecharMenu() {
+      hamburger?.classList.remove('active');
+      hamburger?.setAttribute('aria-expanded', 'false');
+      mobileMenu?.classList.remove('active');
+      mobileOverlay?.classList.remove('active');
       document.body.style.overflow = '';
     }
-// O cadastro de vistoriador é validado e enviado pelo script do HTML corrigido.
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      mobileOverlay.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    function alternarMenu() {
+      if (!hamburger || !mobileMenu || !mobileOverlay) return;
+
+      const aberto = !mobileMenu.classList.contains('active');
+
+      hamburger.classList.toggle('active', aberto);
+      hamburger.setAttribute('aria-expanded', String(aberto));
+      mobileMenu.classList.toggle('active', aberto);
+      mobileOverlay.classList.toggle('active', aberto);
+
+      document.body.style.overflow = aberto ? 'hidden' : '';
+    }
+
+    hamburger?.addEventListener('click', alternarMenu);
+
+    hamburger?.addEventListener('keydown', event => {
+      if (
+        hamburger.tagName !== 'BUTTON' &&
+        (event.key === 'Enter' || event.key === ' ')
+      ) {
+        event.preventDefault();
+        alternarMenu();
+      }
     });
 
-    mobileClose.addEventListener('click', closeMobileMenu);
+    mobileClose?.addEventListener('click', fecharMenu);
+    mobileOverlay?.addEventListener('click', fecharMenu);
 
-    mobileOverlay.addEventListener('click', closeMobileMenu);
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', fecharMenu);
     });
 
-    // === Scroll Animations ===
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    // ========================================
+    // ANIMAÇÕES AO ROLAR
+    // ========================================
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
+    const elementosAnimados = document.querySelectorAll('.animate-on-scroll');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
-    });
-
-    // === Counter Animation ===
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count);
-          const prefix = el.dataset.prefix || '';
-          const suffix = el.dataset.suffix || '';
-          const duration = 2000;
-          const start = performance.now();
-
-          const animate = (now) => {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.round(eased * target);
-            el.textContent = prefix + current.toLocaleString('pt-BR') + suffix;
-
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            }
-          };
-
-          requestAnimationFrame(animate);
-          counterObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat-number[data-count]').forEach(el => {
-      counterObserver.observe(el);
-    });
-// === Lightbox (Imagem Expandida ao Clicar) ===
-const imgLightbox = document.getElementById('imgLightbox');
-const imgLightboxImg = document.getElementById('imgLightboxImg');
-const imgLightboxClose = document.getElementById('imgLightboxClose');
-const zoomableImages = document.querySelectorAll('.base-card-img img');
-
-function openLightbox(src, alt) {
-  imgLightboxImg.src = src;
-  imgLightboxImg.alt = alt || '';
-  imgLightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  imgLightbox.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-zoomableImages.forEach(img => {
-  img.addEventListener('click', () => {
-    openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
-  });
-});
-
-if (imgLightboxClose) {
-  imgLightboxClose.addEventListener('click', closeLightbox);
-}
-
-if (imgLightbox) {
-  imgLightbox.addEventListener('click', (e) => {
-    if (e.target === imgLightbox) {
-      closeLightbox();
-    }
-  });
-}
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && imgLightbox && imgLightbox.classList.contains('active')) {
-    closeLightbox();
-  }
-});
-    // === Testimonials Slider ===
-    const track = document.getElementById('testimonialsTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    if (track && prevBtn && nextBtn) {
-    let currentSlide = 0;
-    let slidesPerView = 1;
-
-    function updateSlidesPerView() {
-      if (window.innerWidth >= 768) {
-        slidesPerView = 3;
-      } else {
-        slidesPerView = 1;
-      }
-    }
-
-    function getTotalSlides() {
-      return track.children.length;
-    }
-
-    function getMaxSlide() {
-      return Math.max(0, getTotalSlides() - slidesPerView);
-    }
-
-    function updateSlider() {
-      updateSlidesPerView();
-      const cardWidth = 100 / slidesPerView;
-      track.style.transform = `translateX(-${currentSlide * cardWidth}%)`;
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentSlide = Math.max(0, currentSlide - 1);
-      updateSlider();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentSlide = Math.min(getMaxSlide(), currentSlide + 1);
-      updateSlider();
-    });
-
-    window.addEventListener('resize', updateSlider);
-    updateSlider();
-
-    // Auto-play slider
-    setInterval(() => {
-      if (currentSlide < getMaxSlide()) {
-        currentSlide++;
-      } else {
-        currentSlide = 0;
-      }
-      updateSlider();
-    }, 5000);
-
-    }
-
-    // === Bases Gallery Slider (Conheça Nossas Bases) ===
-    const basesTrack = document.getElementById('basesTrack');
-    const basesPrevBtn = document.getElementById('basesPrevBtn');
-    const basesNextBtn = document.getElementById('basesNextBtn');
-
-    if (basesTrack && basesPrevBtn && basesNextBtn) {
-      let basesCurrentSlide = 0;
-      let basesSlidesPerView = 1;
-
-      function updateBasesSlidesPerView() {
-        if (window.innerWidth >= 1024) {
-          basesSlidesPerView = 3;
-        } else if (window.innerWidth >= 768) {
-          basesSlidesPerView = 2;
-        } else if (window.innerWidth >= 480) {
-          basesSlidesPerView = 1.25;
-        } else {
-          basesSlidesPerView = 1;
-        }
-      }
-
-      function getBasesTotalSlides() {
-        return basesTrack.children.length;
-      }
-
-      function getBasesMaxSlide() {
-        return Math.max(0, Math.ceil(getBasesTotalSlides() - basesSlidesPerView));
-      }
-
-      function updateBasesSlider() {
-        updateBasesSlidesPerView();
-        const maxSlide = getBasesMaxSlide();
-        if (basesCurrentSlide > maxSlide) {
-          basesCurrentSlide = maxSlide;
-        }
-        const cardWidth = 100 / basesSlidesPerView;
-        basesTrack.style.transform = `translateX(-${basesCurrentSlide * cardWidth}%)`;
-      }
-
-      basesPrevBtn.addEventListener('click', () => {
-        basesCurrentSlide = Math.max(0, basesCurrentSlide - 1);
-        updateBasesSlider();
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
       });
 
-      basesNextBtn.addEventListener('click', () => {
-        basesCurrentSlide = Math.min(getBasesMaxSlide(), basesCurrentSlide + 1);
-        updateBasesSlider();
+      elementosAnimados.forEach(elemento => observer.observe(elemento));
+    } else {
+      elementosAnimados.forEach(elemento => {
+        elemento.classList.add('visible');
       });
-
-      window.addEventListener('resize', updateBasesSlider);
-      updateBasesSlider();
-
-      // Auto-play do carrossel de bases
-      setInterval(() => {
-        if (basesCurrentSlide < getBasesMaxSlide()) {
-          basesCurrentSlide++;
-        } else {
-          basesCurrentSlide = 0;
-        }
-        updateBasesSlider();
-      }, 4500);
     }
 
-    // === WhatsApp Popup ===
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const whatsappPopup = document.getElementById('whatsappPopup');
-    let popupOpen = false;
+    // ========================================
+    // CONTADORES
+    // ========================================
 
-    whatsappBtn.addEventListener('click', () => {
-      popupOpen = !popupOpen;
-      whatsappPopup.classList.toggle('show', popupOpen);
-    });
+    function animarContador(elemento) {
+      const alvo = Number.parseInt(elemento.dataset.count, 10);
 
-    // Close popup when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!whatsappBtn.contains(e.target) && !whatsappPopup.contains(e.target)) {
-        popupOpen = false;
-        whatsappPopup.classList.remove('show');
-      }
-    });
+      if (!Number.isFinite(alvo)) return;
 
-    // Show popup after 3 seconds
-    setTimeout(() => {
-      if (!popupOpen) {
-        popupOpen = true;
-        whatsappPopup.classList.add('show');
-      }
-    }, 3000);
+      const prefixo = elemento.dataset.prefix || '';
+      const sufixo = elemento.dataset.suffix || '';
+      const inicio = performance.now();
+      const duracao = 2000;
 
-    // === Smooth scroll for anchor links ===
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
+      function atualizar(agora) {
+        const progresso = Math.min((agora - inicio) / duracao, 1);
+        const suavizado = 1 - Math.pow(1 - progresso, 3);
+        const atual = Math.round(alvo * suavizado);
+
+        elemento.textContent =
+          prefixo + atual.toLocaleString('pt-BR') + sufixo;
+
+        if (progresso < 1) {
+          requestAnimationFrame(atualizar);
         }
+      }
+
+      requestAnimationFrame(atualizar);
+    }
+
+    const contadores = document.querySelectorAll('.stat-number[data-count]');
+
+    if ('IntersectionObserver' in window) {
+      const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+
+          animarContador(entry.target);
+          counterObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.5 });
+
+      contadores.forEach(elemento => counterObserver.observe(elemento));
+    } else {
+      contadores.forEach(animarContador);
+    }
+
+    // ========================================
+    // LIGHTBOX
+    // ========================================
+
+    const imgLightbox = porId('imgLightbox');
+    const imgLightboxImg = porId('imgLightboxImg');
+    const imgLightboxClose = porId('imgLightboxClose');
+
+    function fecharLightbox() {
+      imgLightbox?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (imgLightbox && imgLightboxImg) {
+      document.querySelectorAll('.base-card-img img').forEach(img => {
+        img.addEventListener('click', () => {
+          imgLightboxImg.src = img.src;
+          imgLightboxImg.alt = img.alt || '';
+          imgLightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
       });
+
+      imgLightboxClose?.addEventListener('click', fecharLightbox);
+
+      imgLightbox.addEventListener('click', event => {
+        if (event.target === imgLightbox) fecharLightbox();
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+
+      fecharMenu();
+
+      if (imgLightbox?.classList.contains('active')) {
+        fecharLightbox();
+      }
     });
 
-    // === Active nav link on scroll ===
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-desktop a');
+    // ========================================
+    // CARROSSÉIS
+    // ========================================
 
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute('id');
+    function configurarCarrossel({
+      trackId,
+      prevId,
+      nextId,
+      slidesPorTela,
+      intervalo
+    }) {
+      const track = porId(trackId);
+      const anterior = porId(prevId);
+      const proximo = porId(nextId);
+
+      if (!track || !anterior || !proximo) return;
+
+      let atual = 0;
+
+      function maximo() {
+        return Math.max(
+          0,
+          Math.ceil(track.children.length - slidesPorTela())
+        );
+      }
+
+      function atualizar() {
+        atual = Math.min(atual, maximo());
+        const largura = 100 / slidesPorTela();
+
+        track.style.transform = `translateX(-${atual * largura}%)`;
+      }
+
+      anterior.addEventListener('click', () => {
+        atual = Math.max(0, atual - 1);
+        atualizar();
+      });
+
+      proximo.addEventListener('click', () => {
+        atual = Math.min(maximo(), atual + 1);
+        atualizar();
+      });
+
+      window.addEventListener('resize', atualizar);
+      atualizar();
+
+      window.setInterval(() => {
+        if (document.hidden) return;
+
+        atual = atual < maximo() ? atual + 1 : 0;
+        atualizar();
+      }, intervalo);
+    }
+
+    configurarCarrossel({
+      trackId: 'testimonialsTrack',
+      prevId: 'prevBtn',
+      nextId: 'nextBtn',
+      slidesPorTela: () => window.innerWidth >= 768 ? 3 : 1,
+      intervalo: 5000
+    });
+
+    configurarCarrossel({
+      trackId: 'basesTrack',
+      prevId: 'basesPrevBtn',
+      nextId: 'basesNextBtn',
+      slidesPorTela: () => {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 768) return 2;
+        if (window.innerWidth >= 480) return 1.25;
+        return 1;
+      },
+      intervalo: 4500
+    });
+
+    // ========================================
+    // POPUP WHATSAPP
+    // ========================================
+
+    const whatsappBtn = porId('whatsappBtn');
+    const whatsappPopup = porId('whatsappPopup');
+
+    if (whatsappBtn && whatsappPopup) {
+      let aberto = false;
+      let interagiu = false;
+
+      function mostrarPopup(valor) {
+        aberto = valor;
+        whatsappPopup.classList.toggle('show', aberto);
+      }
+
+      whatsappBtn.addEventListener('click', () => {
+        interagiu = true;
+        mostrarPopup(!aberto);
+      });
+
+      document.addEventListener('click', event => {
+        if (
+          !whatsappBtn.contains(event.target) &&
+          !whatsappPopup.contains(event.target)
+        ) {
+          mostrarPopup(false);
         }
       });
 
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
+      window.setTimeout(() => {
+        if (!interagiu) mostrarPopup(true);
+      }, 3000);
+    }
+
+    // ========================================
+    // ROLAGEM SUAVE
+    // ========================================
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', event => {
+        const href = link.getAttribute('href');
+
+        if (!href || href === '#') return;
+
+        let id;
+
+        try {
+          id = decodeURIComponent(href.slice(1));
+        } catch {
+          return;
         }
+
+        const destino = porId(id);
+
+        if (!destino) return;
+
+        event.preventDefault();
+
+        window.scrollTo({
+          top: destino.getBoundingClientRect().top + window.scrollY - 80,
+          behavior: 'smooth'
+        });
       });
     });
 
-    // === Professional Form Handling ===
-    const contactForm = document.getElementById('contactForm');
-    const formSuccess = document.getElementById('formSuccess');
+    // ========================================
+    // LINK ATIVO DA NAVEGAÇÃO
+    // ========================================
+
+    const secoes = document.querySelectorAll('section[id]');
+    const linksLocais = Array.from(
+      document.querySelectorAll('.nav-desktop a')
+    ).filter(link => {
+      const href = link.getAttribute('href');
+      return href?.startsWith('#') && href.length > 1;
+    });
+
+    if (secoes.length && linksLocais.length) {
+      function atualizarNavegacao() {
+        let atual = '';
+
+        secoes.forEach(secao => {
+          if (window.scrollY >= secao.offsetTop - 100) {
+            atual = secao.id;
+          }
+        });
+
+        linksLocais.forEach(link => {
+          link.classList.toggle(
+            'active',
+            link.getAttribute('href') === '#' + atual
+          );
+        });
+      }
+
+      window.addEventListener('scroll', atualizarNavegacao, {
+        passive: true
+      });
+
+      atualizarNavegacao();
+    }
+
+    // ========================================
+    // FORMULÁRIO DE CONTATO — WHATSAPP
+    // ========================================
+
+    const contactForm = porId('contactForm');
 
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+      contactForm.addEventListener('submit', event => {
+        event.preventDefault();
 
-        // Validação dos campos
-        let isValid = true;
-        const fields = ['formNome', 'formEmail', 'formTelefone', 'formServico', 'formMensagem'];
+        let valido = true;
 
-        fields.forEach(fieldId => {
-          const field = document.getElementById(fieldId);
-          const formGroup = field.closest('.form-group');
-          const errorSpan = formGroup.querySelector('.form-error');
+        const campos = [
+          'formNome',
+          'formEmail',
+          'formTelefone',
+          'formServico',
+          'formMensagem'
+        ];
 
-          if (!field.value.trim()) {
-            isValid = false;
-            formGroup.classList.add('error');
-            errorSpan.textContent = 'Este campo é obrigatório';
-          } else {
-            formGroup.classList.remove('error');
-            errorSpan.textContent = '';
+        campos.forEach(id => {
+          const campo = porId(id);
 
-            // Validação específica de email
-            if (fieldId === 'formEmail') {
-              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              if (!emailRegex.test(field.value)) {
-                isValid = false;
-                formGroup.classList.add('error');
-                errorSpan.textContent = 'E-mail inválido';
-              }
-            }
-
-            // Validação de telefone
-            if (fieldId === 'formTelefone') {
-              const phoneRegex = /^\(\d{2}\)\s?\d{4,5}-?\d{4}$/;
-              const cleanPhone = field.value.replace(/\D/g, '');
-              if (cleanPhone.length < 10) {
-                isValid = false;
-                formGroup.classList.add('error');
-                errorSpan.textContent = 'Telefone inválido';
-              }
-            }
+          if (!campo) {
+            valido = false;
+            return;
           }
+
+          const grupo = campo.closest('.form-group');
+          const erro = grupo?.querySelector('.form-error');
+
+          campo.value = campo.value.trim();
+
+          let mensagemErro = '';
+
+          if (!campo.value) {
+            mensagemErro = 'Este campo é obrigatório';
+          } else if (
+            id === 'formEmail' &&
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value)
+          ) {
+            mensagemErro = 'E-mail inválido';
+          } else if (
+            id === 'formTelefone' &&
+            campo.value.replace(/\D/g, '').length < 10
+          ) {
+            mensagemErro = 'Telefone inválido';
+          }
+
+          grupo?.classList.toggle('error', Boolean(mensagemErro));
+
+          if (erro) erro.textContent = mensagemErro;
+          if (mensagemErro) valido = false;
         });
 
-        if (isValid) {
-          // Simular envio do formulário
-   const formData = {
-  nome: document.getElementById('formNome').value,
-  empresa: document.getElementById('formEmpresa').value,
-  email: document.getElementById('formEmail').value,
-  telefone: document.getElementById('formTelefone').value,
-  servico: document.getElementById('formServico').value,
-  mensagem: document.getElementById('formMensagem').value
-};
+        if (!valido || !contactForm.reportValidity()) return;
 
-const mensagem = `*Nova Solicitação de Orçamento*
+        const valor = id => porId(id)?.value.trim() || '';
 
-👤 Nome: ${formData.nome}
-🏢 Empresa: ${formData.empresa || 'Não informado'}
-📧 E-mail: ${formData.email}
-📞 Telefone: ${formData.telefone}
-💼 Serviço: ${formData.servico}
+        const mensagem = [
+          '*Nova Solicitação de Orçamento*',
+          '',
+          `👤 Nome: ${valor('formNome')}`,
+          `🏢 Empresa: ${valor('formEmpresa') || 'Não informado'}`,
+          `📧 E-mail: ${valor('formEmail')}`,
+          `📞 Telefone: ${valor('formTelefone')}`,
+          `💼 Serviço: ${valor('formServico')}`,
+          '',
+          '📝 Mensagem:',
+          valor('formMensagem')
+        ].join('\n');
 
-📝 Mensagem:
-${formData.mensagem}`;
+        // Número mantido do seu script original.
+        const numero = '5581996744143';
 
-const numero = "5581996744143"; // Troque pelo seu número
+        window.open(
+          `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
+          '_blank',
+          'noopener,noreferrer'
+        );
 
-window.open(
-  `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
-  "_blank"
-);
-
-contactForm.reset();
-        }
+        // Mantém os campos preenchidos caso a pessoa precise tentar novamente.
       });
 
-      // Limpar erro ao digitar
-      const inputs = contactForm.querySelectorAll('input, textarea, select');
-      inputs.forEach(input => {
-        input.addEventListener('input', function() {
-          const formGroup = this.closest('.form-group');
-          if (this.value.trim()) {
-            formGroup.classList.remove('error');
-          }
+      contactForm.querySelectorAll('input, textarea, select').forEach(campo => {
+        campo.addEventListener('input', () => {
+          const grupo = campo.closest('.form-group');
+
+          grupo?.classList.remove('error');
+
+          const erro = grupo?.querySelector('.form-error');
+          if (erro) erro.textContent = '';
         });
       });
     }
 
-    // === Parallax Effect para Hero ===
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.hero-bg');
-      if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    });
+    // ========================================
+    // CADASTRO — TRABALHE CONOSCO
+    // ========================================
 
-    // === Criar partículas no hero (opcional) ===
-    function createHeroParticles() {
-      const container = document.getElementById('heroParticles');
-      if (!container) return;
+    const form = porId('vistoriadorForm');
+    const botaoEnviar = porId('vistoriadorSubmitBtn');
+    const aviso = porId('vistoriadorFormSuccess');
+    const botaoEmail = porId('emailAlternativo');
+    const statusEmail = porId('emailAlternativoStatus');
+
+    if (form && botaoEnviar && aviso) {
+      const LIMITE_ANEXOS = 9 * 1000 * 1000;
+      const textoOriginal = botaoEnviar.innerHTML;
+      let enviando = false;
+
+      function mostrarAviso(mensagem) {
+        aviso.textContent = mensagem;
+        aviso.style.display = 'block';
+      }
+
+      function limparTextos() {
+        form.querySelectorAll('input, textarea').forEach(campo => {
+          if (
+            ['text', 'tel', 'email', 'search', 'url'].includes(campo.type) ||
+            campo.tagName === 'TEXTAREA'
+          ) {
+            campo.value = campo.value.trim();
+          }
+        });
+      }
+
+      function restaurarBotao() {
+        enviando = false;
+        botaoEnviar.disabled = false;
+        botaoEnviar.innerHTML = textoOriginal;
+        aviso.style.display = 'none';
+      }
+
+      window.addEventListener('pageshow', restaurarBotao);
+
+      const ano = porId('vAno');
+
+      if (ano) {
+        ano.max = String(new Date().getFullYear());
+      }
+
+      form.addEventListener('submit', event => {
+        if (enviando) {
+          event.preventDefault();
+          return;
+        }
+
+        limparTextos();
+
+        if (!form.reportValidity()) {
+          event.preventDefault();
+          return;
+        }
+
+        const arquivos = Array.from(
+          form.querySelectorAll('input[type="file"]')
+        ).flatMap(campo => Array.from(campo.files || []));
+
+        const tamanhoTotal = arquivos.reduce(
+          (total, arquivo) => total + arquivo.size,
+          0
+        );
+
+        if (tamanhoTotal > LIMITE_ANEXOS) {
+          event.preventDefault();
+
+          mostrarAviso(
+            'Os anexos ultrapassam 9 MB. Reduza os arquivos ou use ' +
+            'a opção “Abrir cadastro no e-mail”.'
+          );
+
+          aviso.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+
+          return;
+        }
+
+        const arquivoInvalido = arquivos.find(arquivo => {
+          return !/\.(pdf|jpe?g|png)$/i.test(arquivo.name);
+        });
+
+        if (arquivoInvalido) {
+          event.preventDefault();
+
+          mostrarAviso(
+            'Use apenas documentos em PDF, JPG, JPEG ou PNG.'
+          );
+
+          aviso.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+
+          return;
+        }
+
+        const vaga = porId('vCargo')?.value || '';
+        const segundaVaga = porId('vCargo2')?.value || '';
+        const assunto = form.querySelector('input[name="_subject"]');
+
+        if (assunto) {
+          assunto.value =
+            'Novo Cadastro - ' + vaga +
+            (segundaVaga ? ' / ' + segundaVaga : '');
+        }
+
+        enviando = true;
+        botaoEnviar.disabled = true;
+        botaoEnviar.textContent = 'Enviando...';
+
+        mostrarAviso(
+          'Encaminhando cadastro e documentos. ' +
+          'Conclua a verificação na próxima página, se solicitada.'
+        );
+
+        // Sem preventDefault neste ponto:
+        // o navegador envia o formulário com os arquivos.
+        // Não apresenta sucesso antes da resposta do serviço.
+      });
+
+      botaoEmail?.addEventListener('click', () => {
+        limparTextos();
+
+        // Para o envio manual, valida os dados de texto.
+        // Os arquivos serão anexados no aplicativo de e-mail.
+        const campos = Array.from(form.elements).filter(campo => {
+          return (
+            campo.willValidate &&
+            campo.type !== 'file' &&
+            campo.type !== 'submit' &&
+            campo.type !== 'button'
+          );
+        });
+
+        const invalido = campos.find(campo => !campo.checkValidity());
+
+        if (invalido) {
+          invalido.reportValidity();
+          return;
+        }
+
+        const rotulos = {
+          vaga_pretendida: 'Oportunidade pretendida',
+          segunda_vaga_pretendida: 'Segunda oportunidade',
+          nome: 'Nome completo',
+          data_nascimento: 'Data de nascimento',
+          cpf: 'CPF',
+          rg: 'RG',
+          endereco: 'Endereço',
+          cidade: 'Cidade',
+          uf: 'UF',
+          cep: 'CEP',
+          tel_celular: 'Telefone celular',
+          tel_recado: 'Telefone para recado',
+          banco: 'Banco',
+          agencia: 'Agência',
+          titular_conta: 'Titular da conta',
+          conta_corrente: 'Conta corrente',
+          conta_poupanca: 'Conta poupança',
+          pix: 'Chave PIX',
+          tempo_experiencia: 'Tempo de experiência',
+          relato_experiencia: 'Experiência profissional',
+          veiculo_marca: 'Marca do veículo',
+          veiculo_modelo: 'Modelo do veículo',
+          veiculo_ano: 'Ano de fabricação',
+          veiculo_placa: 'Placa',
+          possui_seguro: 'Possui seguro',
+          seguradora: 'Seguradora'
+        };
+
+        const linhas = [
+          'CADASTRO DE PARCEIRO — CM REGULADORA',
+          ''
+        ];
+
+        for (const [nome, valor] of new FormData(form).entries()) {
+          if (
+            nome.startsWith('_') ||
+            valor instanceof File ||
+            !String(valor).trim()
+          ) {
+            continue;
+          }
+
+          linhas.push(
+            `${rotulos[nome] || nome}: ${valor}`
+          );
+        }
+
+        linhas.push(
+          '',
+          'DOCUMENTOS:',
+          'Anexar CNH, CRLV e comprovante de endereço a este e-mail.'
+        );
+
+        const nome = porId('vNome')?.value || '';
+        const assunto = 'Cadastro de parceiro - ' + nome;
+
+        if (statusEmail) {
+          statusEmail.textContent =
+            'O cadastro ainda não foi enviado. No aplicativo de e-mail, ' +
+            'confira os dados, anexe os três documentos e clique em Enviar. ' +
+            'Se o aplicativo não abrir, envie diretamente para ' +
+            'cmreguladora@gmail.com.';
+        }
+
+        window.location.href =
+          'mailto:cmreguladora@gmail.com' +
+          '?subject=' + encodeURIComponent(assunto) +
+          '&body=' + encodeURIComponent(linhas.join('\n'));
+      });
+    }
+
+    // ========================================
+    // PARALLAX
+    // ========================================
+
+    const hero = document.querySelector('.hero-bg');
+
+    if (hero) {
+      window.addEventListener('scroll', () => {
+        hero.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+      }, { passive: true });
+    }
+
+    // ========================================
+    // PARTÍCULAS DO HERO
+    // ========================================
+
+    const heroParticles = porId('heroParticles');
+
+    if (heroParticles && !heroParticles.dataset.initialized) {
+      heroParticles.dataset.initialized = 'true';
+
+      const style = document.createElement('style');
+
+      style.textContent = `
+        @keyframes cmHeroFloat {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(20px); }
+        }
+      `;
+
+      document.head.appendChild(style);
 
       for (let i = 0; i < 5; i++) {
-        const particle = document.createElement('div');
-        particle.style.position = 'absolute';
-        particle.style.width = Math.random() * 100 + 50 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.background = `rgba(196, 18, 48, ${Math.random() * 0.1})`;
-        particle.style.borderRadius = '50%';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animation = `float ${10 + Math.random() * 10}s infinite ease-in-out`;
-        container.appendChild(particle);
+        const particula = document.createElement('div');
+        const tamanho = Math.random() * 100 + 50;
+
+        Object.assign(particula.style, {
+          position: 'absolute',
+          width: tamanho + 'px',
+          height: tamanho + 'px',
+          background: `rgba(196, 18, 48, ${Math.random() * 0.1})`,
+          borderRadius: '50%',
+          left: Math.random() * 100 + '%',
+          top: Math.random() * 100 + '%',
+          animation: `cmHeroFloat ${10 + Math.random() * 10}s infinite ease-in-out`,
+          pointerEvents: 'none'
+        });
+
+        heroParticles.appendChild(particula);
       }
     }
 
-    // Adicionar animação de float
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(20px); }
-      }
-    `;
-    document.head.appendChild(style);
+    // ========================================
+    // RESPONSIVIDADE
+    // ========================================
 
-    createHeroParticles();
+    function atualizarResponsividade() {
+      const largura = window.innerWidth;
 
-    // === Responsividade melhorada ===
-    function handleResponsive() {
-      const width = window.innerWidth;
-      
-      // Ajustar comportamento baseado no tamanho da tela
-      if (width < 768) {
-        // Mobile
-        document.body.style.fontSize = '14px';
-      } else if (width < 1024) {
-        // Tablet
-        document.body.style.fontSize = '15px';
-      } else {
-        // Desktop
-        document.body.style.fontSize = '16px';
-      }
+      document.body.style.fontSize =
+        largura < 768 ? '14px' :
+        largura < 1024 ? '15px' :
+        '16px';
     }
 
-    window.addEventListener('resize', handleResponsive);
-    handleResponsive();
+    window.addEventListener('resize', atualizarResponsividade);
+    atualizarResponsividade();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciar, { once: true });
+  } else {
+    iniciar();
+  }
+})();
