@@ -439,7 +439,6 @@
           valor('formMensagem')
         ].join('\n');
 
-        // Número mantido do seu script original.
         const numero = '5581996744143';
 
         window.open(
@@ -447,8 +446,6 @@
           '_blank',
           'noopener,noreferrer'
         );
-
-        // Mantém os campos preenchidos caso a pessoa precise tentar novamente.
       });
 
       contactForm.querySelectorAll('input, textarea, select').forEach(campo => {
@@ -458,228 +455,11 @@
           grupo?.classList.remove('error');
 
           const erro = grupo?.querySelector('.form-error');
-          if (erro) erro.textContent = '';
-        });
-      });
-    }
 
-    // ========================================
-    // CADASTRO — TRABALHE CONOSCO
-    // ========================================
-
-    const form = porId('vistoriadorForm');
-    const botaoEnviar = porId('vistoriadorSubmitBtn');
-    const aviso = porId('vistoriadorFormSuccess');
-    const botaoEmail = porId('emailAlternativo');
-    const statusEmail = porId('emailAlternativoStatus');
-
-    if (form && botaoEnviar && aviso) {
-      const LIMITE_ANEXOS = 9 * 1000 * 1000;
-      const textoOriginal = botaoEnviar.innerHTML;
-      let enviando = false;
-
-      function mostrarAviso(mensagem) {
-        aviso.textContent = mensagem;
-        aviso.style.display = 'block';
-      }
-
-      function limparTextos() {
-        form.querySelectorAll('input, textarea').forEach(campo => {
-          if (
-            ['text', 'tel', 'email', 'search', 'url'].includes(campo.type) ||
-            campo.tagName === 'TEXTAREA'
-          ) {
-            campo.value = campo.value.trim();
+          if (erro) {
+            erro.textContent = '';
           }
         });
-      }
-
-      function restaurarBotao() {
-        enviando = false;
-        botaoEnviar.disabled = false;
-        botaoEnviar.innerHTML = textoOriginal;
-        aviso.style.display = 'none';
-      }
-
-      window.addEventListener('pageshow', restaurarBotao);
-
-      const ano = porId('vAno');
-
-      if (ano) {
-        ano.max = String(new Date().getFullYear());
-      }
-
-      form.addEventListener('submit', event => {
-        if (enviando) {
-          event.preventDefault();
-          return;
-        }
-
-        limparTextos();
-
-        if (!form.reportValidity()) {
-          event.preventDefault();
-          return;
-        }
-
-        const arquivos = Array.from(
-          form.querySelectorAll('input[type="file"]')
-        ).flatMap(campo => Array.from(campo.files || []));
-
-        const tamanhoTotal = arquivos.reduce(
-          (total, arquivo) => total + arquivo.size,
-          0
-        );
-
-        if (tamanhoTotal > LIMITE_ANEXOS) {
-          event.preventDefault();
-
-          mostrarAviso(
-            'Os anexos ultrapassam 9 MB. Reduza os arquivos ou use ' +
-            'a opção “Abrir cadastro no e-mail”.'
-          );
-
-          aviso.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-          });
-
-          return;
-        }
-
-        const arquivoInvalido = arquivos.find(arquivo => {
-          return !/\.(pdf|jpe?g|png)$/i.test(arquivo.name);
-        });
-
-        if (arquivoInvalido) {
-          event.preventDefault();
-
-          mostrarAviso(
-            'Use apenas documentos em PDF, JPG, JPEG ou PNG.'
-          );
-
-          aviso.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-          });
-
-          return;
-        }
-
-        const vaga = porId('vCargo')?.value || '';
-        const segundaVaga = porId('vCargo2')?.value || '';
-        const assunto = form.querySelector('input[name="_subject"]');
-
-        if (assunto) {
-          assunto.value =
-            'Novo Cadastro - ' + vaga +
-            (segundaVaga ? ' / ' + segundaVaga : '');
-        }
-
-        enviando = true;
-        botaoEnviar.disabled = true;
-        botaoEnviar.textContent = 'Enviando...';
-
-        mostrarAviso(
-          'Encaminhando cadastro e documentos. ' +
-          'Conclua a verificação na próxima página, se solicitada.'
-        );
-
-        // Sem preventDefault neste ponto:
-        // o navegador envia o formulário com os arquivos.
-        // Não apresenta sucesso antes da resposta do serviço.
-      });
-
-      botaoEmail?.addEventListener('click', () => {
-        limparTextos();
-
-        // Para o envio manual, valida os dados de texto.
-        // Os arquivos serão anexados no aplicativo de e-mail.
-        const campos = Array.from(form.elements).filter(campo => {
-          return (
-            campo.willValidate &&
-            campo.type !== 'file' &&
-            campo.type !== 'submit' &&
-            campo.type !== 'button'
-          );
-        });
-
-        const invalido = campos.find(campo => !campo.checkValidity());
-
-        if (invalido) {
-          invalido.reportValidity();
-          return;
-        }
-
-        const rotulos = {
-          vaga_pretendida: 'Oportunidade pretendida',
-          segunda_vaga_pretendida: 'Segunda oportunidade',
-          nome: 'Nome completo',
-          data_nascimento: 'Data de nascimento',
-          cpf: 'CPF',
-          rg: 'RG',
-          endereco: 'Endereço',
-          cidade: 'Cidade',
-          uf: 'UF',
-          cep: 'CEP',
-          tel_celular: 'Telefone celular',
-          tel_recado: 'Telefone para recado',
-          banco: 'Banco',
-          agencia: 'Agência',
-          titular_conta: 'Titular da conta',
-          conta_corrente: 'Conta corrente',
-          conta_poupanca: 'Conta poupança',
-          pix: 'Chave PIX',
-          tempo_experiencia: 'Tempo de experiência',
-          relato_experiencia: 'Experiência profissional',
-          veiculo_marca: 'Marca do veículo',
-          veiculo_modelo: 'Modelo do veículo',
-          veiculo_ano: 'Ano de fabricação',
-          veiculo_placa: 'Placa',
-          possui_seguro: 'Possui seguro',
-          seguradora: 'Seguradora'
-        };
-
-        const linhas = [
-          'CADASTRO DE PARCEIRO — CM REGULADORA',
-          ''
-        ];
-
-        for (const [nome, valor] of new FormData(form).entries()) {
-          if (
-            nome.startsWith('_') ||
-            valor instanceof File ||
-            !String(valor).trim()
-          ) {
-            continue;
-          }
-
-          linhas.push(
-            `${rotulos[nome] || nome}: ${valor}`
-          );
-        }
-
-        linhas.push(
-          '',
-          'DOCUMENTOS:',
-          'Anexar CNH, CRLV e comprovante de endereço a este e-mail.'
-        );
-
-        const nome = porId('vNome')?.value || '';
-        const assunto = 'Cadastro de parceiro - ' + nome;
-
-        if (statusEmail) {
-          statusEmail.textContent =
-            'O cadastro ainda não foi enviado. No aplicativo de e-mail, ' +
-            'confira os dados, anexe os três documentos e clique em Enviar. ' +
-            'Se o aplicativo não abrir, envie diretamente para ' +
-            'cmreguladora@gmail.com.';
-        }
-
-        window.location.href =
-          'mailto:cmreguladora@gmail.com' +
-          '?subject=' + encodeURIComponent(assunto) +
-          '&body=' + encodeURIComponent(linhas.join('\n'));
       });
     }
 
@@ -691,7 +471,8 @@
 
     if (hero) {
       window.addEventListener('scroll', () => {
-        hero.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+        hero.style.transform =
+          `translateY(${window.scrollY * 0.5}px)`;
       }, { passive: true });
     }
 
@@ -708,8 +489,13 @@
 
       style.textContent = `
         @keyframes cmHeroFloat {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(20px); }
+          0%, 100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(20px);
+          }
         }
       `;
 
@@ -717,17 +503,23 @@
 
       for (let i = 0; i < 5; i++) {
         const particula = document.createElement('div');
-        const tamanho = Math.random() * 100 + 50;
+
+        const tamanho =
+          Math.random() * 100 + 50;
 
         Object.assign(particula.style, {
           position: 'absolute',
           width: tamanho + 'px',
           height: tamanho + 'px',
-          background: `rgba(196, 18, 48, ${Math.random() * 0.1})`,
+          background:
+            `rgba(196, 18, 48, ${Math.random() * 0.1})`,
           borderRadius: '50%',
           left: Math.random() * 100 + '%',
           top: Math.random() * 100 + '%',
-          animation: `cmHeroFloat ${10 + Math.random() * 10}s infinite ease-in-out`,
+          animation:
+            `cmHeroFloat ${
+              10 + Math.random() * 10
+            }s infinite ease-in-out`,
           pointerEvents: 'none'
         });
 
@@ -743,17 +535,27 @@
       const largura = window.innerWidth;
 
       document.body.style.fontSize =
-        largura < 768 ? '14px' :
-        largura < 1024 ? '15px' :
-        '16px';
+        largura < 768
+          ? '14px'
+          : largura < 1024
+            ? '15px'
+            : '16px';
     }
 
-    window.addEventListener('resize', atualizarResponsividade);
+    window.addEventListener(
+      'resize',
+      atualizarResponsividade
+    );
+
     atualizarResponsividade();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciar, { once: true });
+    document.addEventListener(
+      'DOMContentLoaded',
+      iniciar,
+      { once: true }
+    );
   } else {
     iniciar();
   }
