@@ -1,25 +1,72 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Venha fazer parte da nossa rede de profissionais e parceiros!" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Venha fazer parte da nossa rede de profissionais e parceiros!"
+  >
 
   <title>Cadastre-se na CM Reguladora de Sinistros!</title>
 
-  <link rel="icon" type="image/jpeg" href="images/logosemfundo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/logosemfundo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
     .animate-on-scroll {
       opacity: 1 !important;
       transform: none !important;
       transition: none !important;
+    }
+
+    .email-alternativo {
+      margin-top: 24px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    .email-alternativo p {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .email-alternativo button {
+      margin-bottom: 12px;
+    }
+
+    .email-alternativo a {
+      overflow-wrap: anywhere;
+    }
+
+    .aviso-anexos {
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    #vistoriadorFormSuccess {
+      margin-top: 20px;
+      padding: 16px;
+      line-height: 1.6;
+    }
+
+    #vistoriadorSubmitBtn:disabled {
+      opacity: 0.7;
+      cursor: wait;
     }
   </style>
 </head>
@@ -33,7 +80,7 @@
           id="logo-mobile"
           src="images/cm-logo.jpg"
           alt="CM Reguladora de Sinistros"
-        />
+        >
         <div class="header-logo-text"></div>
       </a>
 
@@ -44,18 +91,30 @@
         <a href="index.html#segmentos">Segmentos</a>
         <a href="index.html#processo">Processo</a>
         <a href="index.html#contato">Contato</a>
-        <a href="trabalhe-conosco.html" class="active">Trabalhe Conosco</a>
+        <a href="trabalhe-conosco.html" class="active">
+          Trabalhe Conosco
+        </a>
       </nav>
 
       <a
         href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
         target="_blank"
+        rel="noopener noreferrer"
         class="btn-primary desktop-cta"
       >
-        <i class="fab fa-whatsapp"></i> Solicitar Atendimento
+        <i class="fab fa-whatsapp"></i>
+        Solicitar Atendimento
       </a>
 
-      <div class="hamburger" id="hamburger">
+      <div
+        class="hamburger"
+        id="hamburger"
+        role="button"
+        tabindex="0"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -67,12 +126,17 @@
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">
+    <button
+      type="button"
+      class="mobile-close"
+      id="mobileClose"
+      aria-label="Fechar menu"
+    >
       <i class="fas fa-times"></i>
     </button>
 
     <div class="mobile-menu-header">
-      <img src="images/cm-logo.jpg" alt="CM" />
+      <img src="images/cm-logo.jpg" alt="CM">
       <span>CM Reguladora</span>
     </div>
 
@@ -107,9 +171,11 @@
     <a
       href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
       target="_blank"
+      rel="noopener noreferrer"
       class="btn-primary mobile-cta-btn"
     >
-      <i class="fab fa-whatsapp"></i> Solicitar Atendimento
+      <i class="fab fa-whatsapp"></i>
+      Solicitar Atendimento
     </a>
 
     <div class="mobile-menu-footer">
@@ -118,629 +184,686 @@
     </div>
   </div>
 
-  <!-- BANNER -->
-  <section class="page-hero-inner">
-    <div class="container">
-      <p class="page-hero-breadcrumb animate-on-scroll">
-        <a href="index.html">Início</a>
-        <i class="fas fa-chevron-right"></i>
-        Trabalhe Conosco
-      </p>
+  <main>
+    <!-- BANNER -->
+    <section class="page-hero-inner">
+      <div class="container">
+        <p class="page-hero-breadcrumb animate-on-scroll">
+          <a href="index.html">Início</a>
+          <i class="fas fa-chevron-right"></i>
+          Trabalhe Conosco
+        </p>
 
-      <h1 class="animate-on-scroll delay-1">Trabalhe Conosco</h1>
+        <h1 class="animate-on-scroll delay-1">Trabalhe Conosco</h1>
 
-      <p class="page-hero-subtitle animate-on-scroll delay-2">
-        Venha fazer parte da nossa rede de parceiros!
-      </p>
+        <p class="page-hero-subtitle animate-on-scroll delay-2">
+          Venha fazer parte da nossa rede de parceiros!
+        </p>
 
-      <p class="page-hero-subtitle animate-on-scroll delay-2">
-        Estamos cadastrando empresas e profissionais que atuam na área de seguros
-        de transportes de cargas, que estejam comprometidos para integrar nossa
-        equipe de parceiros.
-      </p>
+        <p class="page-hero-subtitle animate-on-scroll delay-2">
+          Estamos cadastrando empresas e profissionais que atuam na área
+          de seguros de transportes de cargas, que estejam comprometidos
+          para integrar nossa equipe de parceiros.
+        </p>
 
-      <p class="page-hero-subtitle animate-on-scroll delay-2">
-        Amplie suas oportunidades, e venha fazer parte de uma empresa que valoriza
-        a excelência, qualidade, agilidade, transparência e confiança.
-      </p>
+        <p class="page-hero-subtitle animate-on-scroll delay-2">
+          Amplie suas oportunidades e venha fazer parte de uma empresa que
+          valoriza a excelência, qualidade, agilidade, transparência e confiança.
+        </p>
 
-      <p class="page-hero-subtitle animate-on-scroll delay-2">
-        Cadastre-se e cresça conosco!
-      </p>
-    </div>
-  </section>
-
-  <!-- FORMULÁRIO DE CADASTRO -->
-  <section class="section-padding">
-    <div class="container form-page-container">
-      <div class="form-note animate-on-scroll">
-        <i class="fas fa-info-circle"></i>
-        <p>
-          Preencha todos os campos com atenção. Tenha em mãos os arquivos da
-          <strong>CNH</strong>, <strong>CRLV</strong> e
-          <strong>comprovante de endereço</strong> para anexar antes de enviar
-          o cadastro.
+        <p class="page-hero-subtitle animate-on-scroll delay-2">
+          Cadastre-se e cresça conosco!
         </p>
       </div>
+    </section>
 
-      <form
-        class="professional-form form-card animate-on-scroll"
-        id="vistoriadorForm"
-        action="https://formsubmit.co/cmreguladora@gmail.com"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <!-- Configurações do FormSubmit -->
-        <input
-          type="hidden"
-          name="_subject"
-          value="Novo Cadastro de Vistoriador - Trabalhe Conosco"
-        />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://cmreguladora.com.br/obrigado.html" />
-        <input
-          type="text"
-          name="_honey"
-          style="display:none"
-          tabindex="-1"
-          autocomplete="off"
-        />
-
-        <h3 class="form-section-divider">
-          <i class="fas fa-briefcase"></i> Área de Interesse
-        </h3>
-
-        <div class="form-group">
-          <label for="vCargo">Oportunidade Pretendida *</label>
-          <div class="input-wrapper select-wrapper">
-            <i class="fas fa-user-tie input-icon"></i>
-            <select id="vCargo" name="vaga_pretendida" required>
-              <option value="" disabled selected>Selecione a área de interesse</option>
-              <option value="Coordenador de Regulação">Coordenador de Regulação</option>
-              <option value="Analista de Regulação">Analista de Regulação</option>
-              <option value="Assistente Administrativo">Assistente Administrativo</option>
-              <option value="Comissário de Avarias">Comissário de Avarias</option>
-              <option value="Regulador de Sinistros">Regulador de Sinistros</option>
-              <option value="Vistoriador">Vistoriador</option>
-              <option value="Sindicante">Sindicante</option>
-              <option value="Agente Pronta Resposta">Agente Pronta Resposta</option>
-              <option value="Guarnição Armada">Guarnição Armada</option>
-              <option value="Armazenador de Cargas">Armazenador de Cargas</option>
-              <option value="Comprador de Salvados">Comprador de Salvados</option>
-              <option value="Transportadores de Cargas">Transportadores de Cargas</option>
-              <option value="Auxiliar de Carga e Descarga">Auxiliar de Carga e Descarga</option>
-              <option value="Guindaste Munck">Guindaste Munck</option>
-              <option value="Outros">Outros</option>
-            </select>
-          </div>
-          <span class="form-error"></span>
+    <!-- FORMULÁRIO -->
+    <section class="section-padding">
+      <div class="container form-page-container">
+        <div class="form-note animate-on-scroll">
+          <i class="fas fa-info-circle"></i>
+          <p>
+            Preencha todos os campos com atenção. Tenha em mãos os arquivos
+            da <strong>CNH</strong>, <strong>CRLV</strong> e
+            <strong>comprovante de endereço</strong> para anexar antes
+            de enviar o cadastro.
+          </p>
         </div>
 
-        <div class="form-group">
-          <label for="vCargo2">
-            Segunda Oportunidade de Interesse
-            <span style="font-weight:400; opacity:.7;">(opcional)</span>
-          </label>
-          <div class="input-wrapper select-wrapper">
-            <i class="fas fa-user-tie input-icon"></i>
-            <select id="vCargo2" name="segunda_vaga_pretendida">
-              <option value="" selected>Nenhuma / Selecione se desejar</option>
-              <option value="Coordenador de Regulação">Coordenador de Regulação</option>
-              <option value="Analista de Regulação">Analista de Regulação</option>
-              <option value="Assistente Administrativo">Assistente Administrativo</option>
-              <option value="Comissário de Avarias">Comissário de Avarias</option>
-              <option value="Regulador de Sinistros">Regulador de Sinistros</option>
-              <option value="Vistoriador">Vistoriador</option>
-              <option value="Sindicante">Sindicante</option>
-              <option value="Agente Pronta Resposta">Agente Pronta Resposta</option>
-              <option value="Guarnição Armada">Guarnição Armada</option>
-              <option value="Armazenador de Cargas">Armazenador de Cargas</option>
-              <option value="Comprador de Salvados">Comprador de Salvados</option>
-              <option value="Transportadores de Cargas">Transportadores de Cargas</option>
-              <option value="Auxiliar de Carga e Descarga">Auxiliar de Carga e Descarga</option>
-              <option value="Guindaste Munck">Guindaste Munck</option>
-              <option value="Outros">Outros</option>
-            </select>
-          </div>
-          <span class="form-error"></span>
-        </div>
+        <form
+          class="professional-form form-card animate-on-scroll"
+          id="vistoriadorForm"
+          action="https://formsubmit.co/cmreguladora@gmail.com"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="Novo Cadastro - Trabalhe Conosco"
+          >
 
-        <h3 class="form-section-divider">
-          <i class="fas fa-id-card"></i> Dados Pessoais
-        </h3>
+          <input type="hidden" name="_template" value="table">
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vNome">Nome Completo *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-user input-icon"></i>
-              <input
-                type="text"
-                id="vNome"
-                name="nome"
-                placeholder="Seu nome completo"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
+          <!-- CAPTCHA padrão habilitado.
+               Sem _next: usa a confirmação padrão do FormSubmit. -->
+
+          <input
+            type="text"
+            name="_honey"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          >
+
+          <h3 class="form-section-divider">
+            <i class="fas fa-briefcase"></i> Área de Interesse
+          </h3>
 
           <div class="form-group">
-            <label for="vNascimento">Data de Nascimento *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-calendar-alt input-icon"></i>
-              <input
-                type="date"
-                id="vNascimento"
-                name="data_nascimento"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vCPF">CPF *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-id-badge input-icon"></i>
-              <input
-                type="text"
-                id="vCPF"
-                name="cpf"
-                placeholder="000.000.000-00"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="vRG">RG *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-id-badge input-icon"></i>
-              <input
-                type="text"
-                id="vRG"
-                name="rg"
-                placeholder="00.000.000-0"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="vEndereco">Endereço *</label>
-          <div class="input-wrapper">
-            <i class="fas fa-map-marker-alt input-icon"></i>
-            <input
-              type="text"
-              id="vEndereco"
-              name="endereco"
-              placeholder="Rua, número, bairro"
-              required
-            />
-          </div>
-          <span class="form-error"></span>
-        </div>
-
-        <div class="form-row form-row-3">
-          <div class="form-group">
-            <label for="vCidade">Cidade *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-city input-icon"></i>
-              <input
-                type="text"
-                id="vCidade"
-                name="cidade"
-                placeholder="Sua cidade"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="vUF">UF *</label>
+            <label for="vCargo">Oportunidade Pretendida *</label>
             <div class="input-wrapper select-wrapper">
-              <i class="fas fa-map input-icon"></i>
-              <select id="vUF" name="uf" required>
-                <option value="" disabled selected>UF</option>
-                <option>AC</option>
-                <option>AL</option>
-                <option>AP</option>
-                <option>AM</option>
-                <option>BA</option>
-                <option>CE</option>
-                <option>DF</option>
-                <option>ES</option>
-                <option>GO</option>
-                <option>MA</option>
-                <option>MT</option>
-                <option>MS</option>
-                <option>MG</option>
-                <option>PA</option>
-                <option>PB</option>
-                <option>PR</option>
-                <option>PE</option>
-                <option>PI</option>
-                <option>RJ</option>
-                <option>RN</option>
-                <option>RS</option>
-                <option>RO</option>
-                <option>RR</option>
-                <option>SC</option>
-                <option>SP</option>
-                <option>SE</option>
-                <option>TO</option>
+              <i class="fas fa-user-tie input-icon"></i>
+              <select id="vCargo" name="vaga_pretendida" required>
+                <option value="" disabled selected>
+                  Selecione a área de interesse
+                </option>
+                <option>Coordenador de Regulação</option>
+                <option>Analista de Regulação</option>
+                <option>Assistente Administrativo</option>
+                <option>Comissário de Avarias</option>
+                <option>Regulador de Sinistros</option>
+                <option>Vistoriador</option>
+                <option>Sindicante</option>
+                <option>Agente Pronta Resposta</option>
+                <option>Guarnição Armada</option>
+                <option>Armazenador de Cargas</option>
+                <option>Comprador de Salvados</option>
+                <option>Transportadores de Cargas</option>
+                <option>Auxiliar de Carga e Descarga</option>
+                <option>Guindaste Munck</option>
+                <option>Outros</option>
               </select>
             </div>
             <span class="form-error"></span>
           </div>
 
           <div class="form-group">
-            <label for="vCEP">CEP *</label>
+            <label for="vCargo2">
+              Segunda Oportunidade de Interesse (opcional)
+            </label>
+            <div class="input-wrapper select-wrapper">
+              <i class="fas fa-user-tie input-icon"></i>
+              <select id="vCargo2" name="segunda_vaga_pretendida">
+                <option value="" selected>
+                  Nenhuma / Selecione se desejar
+                </option>
+                <option>Coordenador de Regulação</option>
+                <option>Analista de Regulação</option>
+                <option>Assistente Administrativo</option>
+                <option>Comissário de Avarias</option>
+                <option>Regulador de Sinistros</option>
+                <option>Vistoriador</option>
+                <option>Sindicante</option>
+                <option>Agente Pronta Resposta</option>
+                <option>Guarnição Armada</option>
+                <option>Armazenador de Cargas</option>
+                <option>Comprador de Salvados</option>
+                <option>Transportadores de Cargas</option>
+                <option>Auxiliar de Carga e Descarga</option>
+                <option>Guindaste Munck</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <span class="form-error"></span>
+          </div>
+
+          <h3 class="form-section-divider">
+            <i class="fas fa-id-card"></i> Dados Pessoais
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vNome">Nome Completo *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-user input-icon"></i>
+                <input
+                  type="text"
+                  id="vNome"
+                  name="nome"
+                  placeholder="Seu nome completo"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vNascimento">Data de Nascimento *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-calendar-alt input-icon"></i>
+                <input
+                  type="date"
+                  id="vNascimento"
+                  name="data_nascimento"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vCPF">CPF *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-id-badge input-icon"></i>
+                <input
+                  type="text"
+                  id="vCPF"
+                  name="cpf"
+                  placeholder="000.000.000-00"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vRG">RG *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-id-badge input-icon"></i>
+                <input
+                  type="text"
+                  id="vRG"
+                  name="rg"
+                  placeholder="00.000.000-0"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="vEndereco">Endereço *</label>
             <div class="input-wrapper">
-              <i class="fas fa-map-pin input-icon"></i>
+              <i class="fas fa-map-marker-alt input-icon"></i>
               <input
                 type="text"
-                id="vCEP"
-                name="cep"
-                placeholder="00000-000"
+                id="vEndereco"
+                name="endereco"
+                placeholder="Rua, número, bairro"
                 required
-              />
+              >
             </div>
             <span class="form-error"></span>
           </div>
-        </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vCelular">Telefone Celular *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-mobile-alt input-icon"></i>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label for="vCidade">Cidade *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-city input-icon"></i>
+                <input
+                  type="text"
+                  id="vCidade"
+                  name="cidade"
+                  placeholder="Sua cidade"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vUF">UF *</label>
+              <div class="input-wrapper select-wrapper">
+                <i class="fas fa-map input-icon"></i>
+                <select id="vUF" name="uf" required>
+                  <option value="" disabled selected>UF</option>
+                  <option>AC</option>
+                  <option>AL</option>
+                  <option>AP</option>
+                  <option>AM</option>
+                  <option>BA</option>
+                  <option>CE</option>
+                  <option>DF</option>
+                  <option>ES</option>
+                  <option>GO</option>
+                  <option>MA</option>
+                  <option>MT</option>
+                  <option>MS</option>
+                  <option>MG</option>
+                  <option>PA</option>
+                  <option>PB</option>
+                  <option>PR</option>
+                  <option>PE</option>
+                  <option>PI</option>
+                  <option>RJ</option>
+                  <option>RN</option>
+                  <option>RS</option>
+                  <option>RO</option>
+                  <option>RR</option>
+                  <option>SC</option>
+                  <option>SP</option>
+                  <option>SE</option>
+                  <option>TO</option>
+                </select>
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vCEP">CEP *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-map-pin input-icon"></i>
+                <input
+                  type="text"
+                  id="vCEP"
+                  name="cep"
+                  placeholder="00000-000"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vCelular">Telefone Celular *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-mobile-alt input-icon"></i>
+                <input
+                  type="tel"
+                  id="vCelular"
+                  name="tel_celular"
+                  placeholder="(00) 00000-0000"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vRecado">Telefone Recado</label>
+              <div class="input-wrapper">
+                <i class="fas fa-phone input-icon"></i>
+                <input
+                  type="tel"
+                  id="vRecado"
+                  name="tel_recado"
+                  placeholder="(00) 0000-0000"
+                >
+              </div>
+            </div>
+          </div>
+
+          <h3 class="form-section-divider">
+            <i class="fas fa-university"></i> Dados Bancários
+          </h3>
+
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label for="vBanco">Banco *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-landmark input-icon"></i>
+                <input
+                  type="text"
+                  id="vBanco"
+                  name="banco"
+                  placeholder="Nome do banco"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vAgencia">Agência *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-hashtag input-icon"></i>
+                <input
+                  type="text"
+                  id="vAgencia"
+                  name="agencia"
+                  placeholder="0000"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vTitular">Titular da Conta *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-user-check input-icon"></i>
+                <input
+                  type="text"
+                  id="vTitular"
+                  name="titular_conta"
+                  placeholder="Nome do titular"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label for="vCC">C/C (Conta Corrente)</label>
+              <div class="input-wrapper">
+                <i class="fas fa-wallet input-icon"></i>
+                <input
+                  type="text"
+                  id="vCC"
+                  name="conta_corrente"
+                  placeholder="00000-0"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="vCP">C/P (Conta Poupança)</label>
+              <div class="input-wrapper">
+                <i class="fas fa-piggy-bank input-icon"></i>
+                <input
+                  type="text"
+                  id="vCP"
+                  name="conta_poupanca"
+                  placeholder="00000-0"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="vPix">PIX *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-qrcode input-icon"></i>
+                <input
+                  type="text"
+                  id="vPix"
+                  name="pix"
+                  placeholder="Chave PIX"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vTempoExp">Tempo de Experiência *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-briefcase input-icon"></i>
+                <input
+                  type="text"
+                  id="vTempoExp"
+                  name="tempo_experiencia"
+                  placeholder="Ex: 5 anos"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group form-group-relato">
+              <label for="vRelatoExp">Relatar Experiência *</label>
+              <div class="input-wrapper textarea-wrapper">
+                <i class="fas fa-comment-alt input-icon"></i>
+                <textarea
+                  id="vRelatoExp"
+                  name="relato_experiencia"
+                  rows="7"
+                  placeholder="Conte um pouco sobre sua experiência profissional..."
+                  required
+                ></textarea>
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <h3 class="form-section-divider">
+            <i class="fas fa-car"></i> Dados do Veículo
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vMarca">Marca *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-car-side input-icon"></i>
+                <input
+                  type="text"
+                  id="vMarca"
+                  name="veiculo_marca"
+                  placeholder="Ex: Volkswagen"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vModelo">Modelo *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-car input-icon"></i>
+                <input
+                  type="text"
+                  id="vModelo"
+                  name="veiculo_modelo"
+                  placeholder="Ex: Gol"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vAno">Ano de Fabricação *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-calendar input-icon"></i>
+                <input
+                  type="number"
+                  id="vAno"
+                  name="veiculo_ano"
+                  placeholder="0000"
+                  min="1970"
+                  max="2026"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vPlaca">Placa *</label>
+              <div class="input-wrapper">
+                <i class="fas fa-clipboard-list input-icon"></i>
+                <input
+                  type="text"
+                  id="vPlaca"
+                  name="veiculo_placa"
+                  placeholder="ABC-0000"
+                  required
+                >
+              </div>
+              <span class="form-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Possui Seguro? *</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input
+                    type="radio"
+                    name="possui_seguro"
+                    value="Sim"
+                    required
+                  >
+                  Sim
+                </label>
+
+                <label class="radio-option">
+                  <input
+                    type="radio"
+                    name="possui_seguro"
+                    value="Não"
+                    required
+                  >
+                  Não
+                </label>
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vSeguradora">Seguradora</label>
+              <div class="input-wrapper">
+                <i class="fas fa-shield-alt input-icon"></i>
+                <input
+                  type="text"
+                  id="vSeguradora"
+                  name="seguradora"
+                  placeholder="Nome da seguradora"
+                >
+              </div>
+            </div>
+          </div>
+
+          <h3 class="form-section-divider">
+            <i class="fas fa-paperclip"></i> Documentos (Anexos)
+          </h3>
+
+          <p class="aviso-anexos">
+            Formatos: PDF, JPG, JPEG ou PNG.
+            Os três documentos devem somar no máximo 9 MB.
+          </p>
+
+          <div class="form-row">
+            <div class="form-group file-upload-group">
+              <label for="vCNH">CNH — Anexo obrigatório *</label>
               <input
-                type="tel"
-                id="vCelular"
-                name="tel_celular"
-                placeholder="(00) 00000-0000"
+                type="file"
+                id="vCNH"
+                name="anexo_cnh"
+                accept=".pdf,.jpg,.jpeg,.png"
                 required
-              />
+              >
+              <span class="form-error"></span>
             </div>
-            <span class="form-error"></span>
-          </div>
 
-          <div class="form-group">
-            <label for="vRecado">Telefone Recado</label>
-            <div class="input-wrapper">
-              <i class="fas fa-phone input-icon"></i>
+            <div class="form-group file-upload-group">
+              <label for="vCRLV">CRLV — Anexo obrigatório *</label>
               <input
-                type="tel"
-                id="vRecado"
-                name="tel_recado"
-                placeholder="(00) 0000-0000"
-              />
-            </div>
-          </div>
-        </div>
-
-        <h3 class="form-section-divider">
-          <i class="fas fa-university"></i> Dados Bancários
-        </h3>
-
-        <div class="form-row form-row-3">
-          <div class="form-group">
-            <label for="vBanco">Banco *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-landmark input-icon"></i>
-              <input
-                type="text"
-                id="vBanco"
-                name="banco"
-                placeholder="Nome do banco"
+                type="file"
+                id="vCRLV"
+                name="anexo_crlv"
+                accept=".pdf,.jpg,.jpeg,.png"
                 required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="vAgencia">Agência *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-hashtag input-icon"></i>
-              <input
-                type="text"
-                id="vAgencia"
-                name="agencia"
-                placeholder="0000"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="vTitular">Titular da Conta *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-user-check input-icon"></i>
-              <input
-                type="text"
-                id="vTitular"
-                name="titular_conta"
-                placeholder="Nome do titular"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-        </div>
-
-        <div class="form-row form-row-3">
-          <div class="form-group">
-            <label for="vCC">C/C (Conta Corrente)</label>
-            <div class="input-wrapper">
-              <i class="fas fa-wallet input-icon"></i>
-              <input
-                type="text"
-                id="vCC"
-                name="conta_corrente"
-                placeholder="00000-0"
-              />
+              >
+              <span class="form-error"></span>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="vCP">C/P (Conta Poupança)</label>
-            <div class="input-wrapper">
-              <i class="fas fa-piggy-bank input-icon"></i>
-              <input
-                type="text"
-                id="vCP"
-                name="conta_poupanca"
-                placeholder="00000-0"
-              />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="vPix">PIX *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-qrcode input-icon"></i>
-              <input
-                type="text"
-                id="vPix"
-                name="pix"
-                placeholder="Chave PIX"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vTempoExp">Tempo de Experiência *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-briefcase input-icon"></i>
-              <input
-                type="text"
-                id="vTempoExp"
-                name="tempo_experiencia"
-                placeholder="Ex: 5 anos"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group form-group-relato">
-            <label for="vRelatoExp">Relatar Experiência *</label>
-            <div class="input-wrapper textarea-wrapper">
-              <i class="fas fa-comment-alt input-icon"></i>
-              <textarea
-                id="vRelatoExp"
-                name="relato_experiencia"
-                rows="7"
-                placeholder="Conte um pouco sobre sua experiência profissional..."
-                required
-              ></textarea>
-            </div>
-            <span class="form-error"></span>
-          </div>
-        </div>
-
-        <h3 class="form-section-divider">
-          <i class="fas fa-car"></i> Dados do Veículo
-        </h3>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vMarca">Marca *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-car-side input-icon"></i>
-              <input
-                type="text"
-                id="vMarca"
-                name="veiculo_marca"
-                placeholder="Ex: Volkswagen"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="vModelo">Modelo *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-car input-icon"></i>
-              <input
-                type="text"
-                id="vModelo"
-                name="veiculo_modelo"
-                placeholder="Ex: Gol"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vAno">Ano de Fabricação *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-calendar input-icon"></i>
-              <input
-                type="number"
-                id="vAno"
-                name="veiculo_ano"
-                placeholder="0000"
-                min="1970"
-                max="2026"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="vPlaca">Placa *</label>
-            <div class="input-wrapper">
-              <i class="fas fa-clipboard-list input-icon"></i>
-              <input
-                type="text"
-                id="vPlaca"
-                name="veiculo_placa"
-                placeholder="ABC-0000"
-                required
-              />
-            </div>
-            <span class="form-error"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Possui Seguro? *</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="possui_seguro" value="Sim" required />
-                Sim
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="possui_seguro" value="Não" />
-                Não
-              </label>
-            </div>
-            <span class="form-error"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="vSeguradora">Seguradora</label>
-            <div class="input-wrapper">
-              <i class="fas fa-shield-alt input-icon"></i>
-              <input
-                type="text"
-                id="vSeguradora"
-                name="seguradora"
-                placeholder="Nome da seguradora"
-              />
-            </div>
-          </div>
-        </div>
-
-        <h3 class="form-section-divider">
-          <i class="fas fa-paperclip"></i> Documentos (Anexos)
-        </h3>
-
-        <div class="form-row">
           <div class="form-group file-upload-group">
-            <label for="vCNH">CNH * Anexo obrigatório</label>
+            <label for="vComprovante">
+              Comprovante de Endereço — Anexo obrigatório *
+            </label>
             <input
               type="file"
-              id="vCNH"
-              name="anexo_cnh"
+              id="vComprovante"
+              name="anexo_comprovante_endereco"
               accept=".pdf,.jpg,.jpeg,.png"
               required
-            />
+            >
             <span class="form-error"></span>
           </div>
 
-          <div class="form-group file-upload-group">
-            <label for="vCRLV">CRLV *</label>
-            <input
-              type="file"
-              id="vCRLV"
-              name="anexo_crlv"
-              accept=".pdf,.jpg,.jpeg,.png"
-              required
-            />
-            <span class="form-error"></span>
+          <button
+            type="submit"
+            class="btn-primary form-submit-btn"
+            id="vistoriadorSubmitBtn"
+          >
+            <i class="fas fa-paper-plane"></i>
+            Enviar Cadastro
+          </button>
+
+          <div
+            class="form-success"
+            id="vistoriadorFormSuccess"
+            style="display:none"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+          <div class="email-alternativo">
+            <p><strong>Problemas para enviar o cadastro?</strong></p>
+            <p>
+              Abra seu aplicativo de e-mail com os dados preenchidos.
+              Anexe manualmente a CNH, o CRLV e o comprovante de endereço
+              antes de enviar. Os arquivos selecionados acima não são
+              transferidos automaticamente para o e-mail.
+            </p>
+
+            <button
+              type="button"
+              id="emailAlternativo"
+              class="btn-primary"
+            >
+              <i class="fas fa-envelope"></i>
+              Abrir cadastro no e-mail
+            </button>
+
+            <p id="emailAlternativoStatus" role="status"></p>
+
+            <p>
+              Destinatário:
+              <a href="mailto:cmreguladora@gmail.com">
+                cmreguladora@gmail.com
+              </a>
+            </p>
           </div>
-        </div>
-
-        <div class="form-group file-upload-group">
-          <label for="vComprovante">Comprovante de Endereço * <br> Anexo obrigatório</label>
-          <input
-            type="file"
-            id="vComprovante"
-            name="anexo_comprovante_endereco"
-            accept=".pdf,.jpg,.jpeg,.png"
-            required
-          />
-          <span class="form-error"></span>
-        </div>
-
-        <button
-          type="submit"
-          class="btn-primary form-submit-btn"
-          id="vistoriadorSubmitBtn"
-        >
-          <i class="fas fa-paper-plane"></i> Enviar Cadastro
-        </button>
-
-        <div
-          class="form-success"
-          id="vistoriadorFormSuccess"
-          style="display:none"
-          role="status"
-          aria-live="polite"
-        >
-          <i class="fas fa-spinner fa-spin"></i>
-          <p>Enviando seu cadastro, aguarde um instante...</p>
-        </div>
-      </form>
-    </div>
-  </section>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/cmlog33.png" alt="CM Reguladora de Sinistros" />
+          <img src="images/cmlog33.png" alt="CM Reguladora de Sinistros">
 
           <p>
-            Soluções completas em regulação e vistoria de sinistros de transporte
-            rodoviário, aéreo e marítimo, com atendimento 24 horas em todo o Brasil.
+            Soluções completas em regulação e vistoria de sinistros de
+            transporte rodoviário, aéreo e marítimo, com atendimento
+            24 horas em todo o Brasil.
           </p>
 
           <div class="footer-social">
             <a
-              href="https://www.instagram.com/cmreguladora?igsh=MWE0a2thbWszbGxuZQ%3D%3D"
+              href="https://www.instagram.com/cmreguladora"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
             >
               <i class="fab fa-instagram"></i>
             </a>
+
             <a
               href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="WhatsApp"
             >
               <i class="fab fa-whatsapp"></i>
@@ -786,6 +909,7 @@
             <a
               href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
               target="_blank"
+              rel="noopener noreferrer"
               style="color:rgba(255,255,255,0.7);font-size:13px;"
             >
               Atendimento 24 horas
@@ -806,13 +930,16 @@
 
       <div class="footer-bottom">
         <p>
-          &copy; 2026 CM Reguladora de Sinistros. Todos os direitos reservados.
-          | Powered by <a href="https://www.criatech.online">Cria Tech💙</a>
+          &copy; 2026 CM Reguladora de Sinistros.
+          Todos os direitos reservados.
+          | Powered by
+          <a href="https://www.criatech.online">Cria Tech💙</a>
         </p>
 
         <a
           href="https://www.instagram.com/cmreguladora"
           target="_blank"
+          rel="noopener noreferrer"
           class="instagram-link"
         >
           <i class="fab fa-instagram"></i> @cmreguladora
@@ -825,7 +952,8 @@
   <div class="whatsapp-float">
     <div class="whatsapp-popup" id="whatsappPopup">
       <p class="whatsapp-popup-title">
-        <i class="fab fa-whatsapp" style="color:#25D366;"></i> 24h
+        <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+        24h
       </p>
 
       <p class="whatsapp-popup-phone">(63) 9 9966-6745</p>
@@ -833,86 +961,34 @@
       <a
         href="https://api.whatsapp.com/message/7GJXLPIXNVXSP1?autoload=1&app_absent=0"
         target="_blank"
+        rel="noopener noreferrer"
         class="whatsapp-popup-btn"
       >
-        <i class="fab fa-whatsapp"></i> Solicitar Atendimento Agora
+        <i class="fab fa-whatsapp"></i>
+        Solicitar Atendimento Agora
       </a>
     </div>
 
-    <button class="whatsapp-btn" id="whatsappBtn" aria-label="WhatsApp">
+    <button
+      type="button"
+      class="whatsapp-btn"
+      id="whatsappBtn"
+      aria-label="WhatsApp"
+    >
       <i class="fab fa-whatsapp"></i>
     </button>
   </div>
 
-  <!-- VOLTAR AO TOPO -->
-  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <button
+    type="button"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Voltar ao topo"
+  >
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- Use aqui o script.js corrigido -->
-  <script src="js/script.js"></script>
-
-  <!-- Validação do cadastro. O envio é feito de forma nativa pelo FormSubmit
-       para garantir o suporte aos anexos multipart/form-data. -->
-  <script>
-    (() => {
-      const form = document.getElementById('vistoriadorForm');
-      const btn = document.getElementById('vistoriadorSubmitBtn');
-      const successBox = document.getElementById('vistoriadorFormSuccess');
-      const MAX_TOTAL_BYTES = 10 * 1024 * 1024; // limite total do FormSubmit: 10 MB
-
-      form.addEventListener('submit', function (event) {
-        // Impede que espaços em branco sejam considerados preenchimento.
-        form.querySelectorAll('input[required], textarea[required]').forEach(field => {
-          const tiposTexto = ['text', 'tel', 'email', 'search', 'url', 'textarea'];
-          if (tiposTexto.includes(field.type)) {
-            field.value = field.value.trim();
-          }
-        });
-
-        if (!form.reportValidity()) {
-          event.preventDefault();
-          successBox.style.display = 'none';
-          return;
-        }
-
-        const arquivos = [
-          document.getElementById('vCNH')?.files?.[0],
-          document.getElementById('vCRLV')?.files?.[0],
-          document.getElementById('vComprovante')?.files?.[0]
-        ].filter(Boolean);
-
-        const tamanhoTotal = arquivos.reduce((total, arquivo) => total + arquivo.size, 0);
-
-        if (tamanhoTotal > MAX_TOTAL_BYTES) {
-          event.preventDefault();
-          successBox.style.display = 'flex';
-          successBox.innerHTML =
-            '<i class="fas fa-exclamation-circle"></i>' +
-            '<p>Os anexos somam mais de 10 MB. Reduza o tamanho dos arquivos e tente novamente.</p>';
-          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          return;
-        }
-
-        const vagaEscolhida = form.querySelector('#vCargo').value;
-        const vagaEscolhida2 = form.querySelector('#vCargo2').value;
-        const subjectField = form.querySelector('input[name="_subject"]');
-
-        let assunto = 'Novo Cadastro - ' + vagaEscolhida;
-        if (vagaEscolhida2) assunto += ' / ' + vagaEscolhida2;
-        subjectField.value = assunto;
-
-        // Não use preventDefault/fetch aqui. O POST nativo com multipart/form-data
-        // é o fluxo documentado pelo FormSubmit para anexos.
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-        successBox.style.display = 'flex';
-        successBox.innerHTML =
-          '<i class="fas fa-spinner fa-spin"></i>' +
-          '<p>Enviando seu cadastro e documentos...</p>';
-      });
-    })();
-  </script>
+  <!-- Toda a lógica fica neste arquivo. -->
+  <script src="js/script.js" defer></script>
 </body>
-
 </html>
